@@ -4,88 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="KOKOY Restaurant – Patisserie, 1A/C Bosan Road, Gulgasht Colony, Multan.">
-<meta name="theme-color" content="#100E0B">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23100E0B%27/%3E%3Cpath d=%27M16 14v36M16 32l14-18M16 32l14 18M48 14v36M48 32L34 14M48 32L34 50%27 stroke=%27%23CB9C60%27 stroke-width=%273%27 fill=%27none%27/%3E%3C/svg%3E">
 <title>KOKOY Multan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
 <link rel="preload" as="image" href="img/entrance.webp" fetchpriority="high">
 <style>
-/* KOKOY — "The Arch".
-   Arrive on Bosan Road at night, pass through the arch into lit plaster rooms, sit down to the food,
-   end with dessert and the sign glowing outside.
-   Photography rule: every photo is shown at roughly its own pixel size or smaller (portraits run full
-   viewport HEIGHT rather than full width), so nothing is upscaled into blur. */
+/* Layout: "The Arch" — arrive at night, pass through KOKOY's own arch into warm plaster rooms,
+   then back out into the evening. Photos are sized to what each file holds sharply (≈2× its pixels at most). */
 :root{
-  --night:#100E0B;
-  --umber:#1A1612;
-  --plaster:#ECE4D6;
-  --sugar:#F5EFE5;
-  --cream:#E2D6C2;
-  --stone:#978A79;
-  --lamp:#CB9C60;
-  --clay:#875C34;
-  --ink:#191612;
-  --hair-d:rgba(236,228,214,.16);
-  --hair-l:rgba(25,22,18,.16);
-  --soft-d:rgba(236,228,214,.68);
-  --soft-l:rgba(25,22,18,.66);
-  --display:"Bodoni Moda","Bodoni 72","Didot",Georgia,serif;
+  --night:#12100D;      /* Bosan Road after dark */
+  --umber:#1C1814;      /* dining room shadow */
+  --plaster:#EDE6DA;    /* lit interior walls */
+  --sugar:#F6F1E9;      /* patisserie, brightest room */
+  --cream:#E2D5C0;      /* alcoves, deeper plaster */
+  --stone:#968A7A;      /* captions */
+  --lamp:#C59358;       /* wall-wash glow, used sparingly */
+  --clay:#8A6038;       /* lamp tone on light grounds */
+  --ink:#1A1713;
+  --hair-d:rgba(237,230,218,.14);
+  --hair-l:rgba(26,23,19,.14);
+  --soft-d:rgba(237,230,218,.66);
+  --soft-l:rgba(26,23,19,.64);
+  --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
   --sans:"Jost","Futura","Century Gothic","Avenir Next",system-ui,sans-serif;
-  --gut:clamp(20px,4.6vw,80px);
-  --sec:clamp(120px,14vw,230px);
+  --gut:clamp(20px,5vw,80px);
+  --sec:clamp(112px,14vw,220px);
   --ease:cubic-bezier(.22,.61,.24,1);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--night);color:var(--plaster);font:300 17px/1.75 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
 button{font:inherit;color:inherit}
-::selection{background:var(--lamp);color:var(--night)}
 :focus-visible{outline:1px solid var(--lamp);outline-offset:4px}
-.wrap{padding-inline:var(--gut);max-width:1600px;margin-inline:auto}
-.ph{position:relative;overflow:hidden;margin:0}
-.ph img{width:100%;height:100%;object-fit:cover}
-.arch{border-radius:999px 999px 0 0}
+.wrap{padding-inline:var(--gut);max-width:1520px;margin-inline:auto}
+.light{background:var(--plaster);color:var(--ink)}
 
-/* type */
-.label{display:inline-flex;align-items:center;gap:14px;font:500 .68rem/1.2 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--lamp)}
-.label::before{content:"";width:30px;height:1px;background:currentColor;opacity:.7}
-.lt .label{color:var(--clay)}
-.d{font-family:var(--display);font-weight:400;line-height:.94;letter-spacing:-.022em;margin:0;text-wrap:balance}
-.d em{font-style:italic}
-.xl{font-size:clamp(3.4rem,9vw,10.4rem)}
-.l1{font-size:clamp(2.8rem,6vw,6.6rem)}
-.l2{font-size:clamp(2.2rem,3.7vw,4rem);line-height:1}
-.num{font:400 .72rem/1 var(--sans);letter-spacing:.26em;font-variant-numeric:tabular-nums}
-.mask{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
-.mask>*{display:block}
-.lt{color:var(--ink)}
-.lt p{color:var(--soft-l)}
+/* type system */
+.label{display:inline-flex;align-items:center;gap:14px;font:500 .7rem/1.2 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--lamp)}
+.label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.light .label,.sugar .label{color:var(--clay)}
+.d{font-family:var(--display);font-weight:300;line-height:.96;letter-spacing:-.012em;margin:0;text-wrap:balance}
+.d em{font-style:italic;font-weight:300}
+.xl{font-size:clamp(3.2rem,8.4vw,9rem)}
+.l1{font-size:clamp(2.8rem,6.2vw,6.6rem)}
+.l2{font-size:clamp(2.2rem,4vw,4.2rem);line-height:1.02}
+.lede{font-size:1.08rem;line-height:1.8;max-width:40ch;margin:0}
+.dim-d{color:var(--soft-d)}.dim-l{color:var(--soft-l)}
+.num{font:400 .74rem/1 var(--sans);letter-spacing:.24em;font-variant-numeric:tabular-nums}
 
 /* buttons */
-.btn{--bg:var(--plaster);--fg:var(--ink);display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:1rem 1.9rem;background:var(--bg) linear-gradient(var(--lamp),var(--lamp)) no-repeat 0 100%/100% 0;color:var(--fg);border:0;border-radius:0;font:500 .7rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-size .7s var(--ease),color .5s}
+.btn{--bg:var(--plaster);--fg:var(--ink);display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:1rem 1.9rem;background:var(--bg) linear-gradient(var(--lamp),var(--lamp)) no-repeat 0 100%/100% 0;color:var(--fg);border:0;font:500 .72rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-size .7s var(--ease),color .5s}
 .btn:hover{background-size:100% 100%;color:var(--night)}
-.lt .btn{--bg:var(--ink);--fg:var(--plaster)}
-.link{display:inline-flex;align-items:center;gap:.9em;min-height:52px;font:500 .7rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;border:0;padding:0}
+.btn--ghost{--bg:transparent;--fg:var(--plaster);box-shadow:inset 0 0 0 1px var(--hair-d)}
+.link{display:inline-flex;align-items:center;gap:.9em;min-height:52px;font:500 .72rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;border:0;padding:0}
 .link::after{content:"";width:2.6em;height:1px;background:currentColor;transition:width .7s var(--ease)}
 .link:hover::after{width:4.4em}
 .kk{display:inline-flex;font:400 1em/1 var(--sans)}
 .kk span:last-child{transform:scaleX(-1);margin-left:-.12em}
+.ph{position:relative;overflow:hidden;margin:0}
+.ph>img{width:100%;height:100%;object-fit:cover}
+.arch{border-radius:999px 999px 0 0}
 
 /* ───── NAV ───── */
 .nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .7s,backdrop-filter .7s}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:92px;transition:height .7s var(--ease)}
-.nav.is-solid{background:rgba(16,14,11,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav.is-solid{background:rgba(18,16,13,.84);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .nav.is-solid .nav-in{height:66px}
-.brand{display:flex;align-items:center;gap:.85rem;text-decoration:none;font:400 .9rem/1 var(--sans);letter-spacing:.5em}
+.brand{display:flex;align-items:center;gap:.85rem;text-decoration:none;font:400 .92rem/1 var(--sans);letter-spacing:.46em}
 .brand .kk{font-size:1.15rem;color:var(--lamp)}
 .nav-links{display:flex;gap:clamp(20px,2.6vw,44px);list-style:none;margin:0;padding:0}
-.nav-links a{font:400 .72rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;text-decoration:none;opacity:.72;padding:.6rem 0;transition:opacity .3s}
+.nav-links a{font:400 .74rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;opacity:.74;padding:.6rem 0;transition:opacity .3s}
 .nav-links a:hover{opacity:1}
 .nav .btn{min-height:44px;padding:.8rem 1.3rem}
 .burger{display:none;width:48px;height:48px;background:none;border:0;cursor:pointer;position:relative}
@@ -96,7 +88,7 @@ button{font:inherit;color:inherit}
 .sheet{position:fixed;inset:0;z-index:45;background:var(--night);display:flex;flex-direction:column;justify-content:space-between;padding:calc(120px + env(safe-area-inset-top,0px)) var(--gut) calc(32px + env(safe-area-inset-bottom,0px));clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease);visibility:hidden}
 .menu-open .sheet{clip-path:inset(0 0 0 0);visibility:visible}
 .sheet ol{list-style:none;margin:0;padding:0;display:grid;gap:.2rem}
-.sheet ol a{font:400 clamp(2.4rem,11vw,3.6rem)/1.1 var(--display);text-decoration:none;display:flex;align-items:baseline;gap:1rem}
+.sheet ol a{font:300 clamp(2.6rem,12vw,3.8rem)/1.08 var(--display);text-decoration:none;display:flex;align-items:baseline;gap:1rem}
 .sheet ol a small{font:400 .66rem/1 var(--sans);letter-spacing:.2em;color:var(--stone)}
 .sheet li{transform:translateY(24px);opacity:0;transition:transform .9s var(--ease),opacity .9s}
 .menu-open .sheet li{transform:none;opacity:1}
@@ -105,7 +97,7 @@ button{font:inherit;color:inherit}
 .sheet-foot .btn{width:100%}
 @media (max-width:959px){.nav-links,.nav .btn{display:none}.burger{display:block}}
 
-.chapter{position:fixed;left:var(--gut);bottom:30px;z-index:40;display:flex;gap:.9rem;align-items:baseline;font:500 .64rem/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:#ECE4D6;mix-blend-mode:difference;pointer-events:none}
+.chapter{position:fixed;left:var(--gut);bottom:30px;z-index:40;display:flex;gap:.9rem;align-items:baseline;font:500 .66rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:#EDE6DA;mix-blend-mode:difference;pointer-events:none}
 .chapter b{font-weight:400;opacity:.6;font-variant-numeric:tabular-nums}
 @media (max-width:959px){.chapter{display:none}}
 .pill{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;transform:translate(-50%,170%);transition:transform .8s var(--ease);box-shadow:0 12px 34px rgba(0,0,0,.4);white-space:nowrap}
@@ -113,33 +105,31 @@ button{font:inherit;color:inherit}
 @media (min-width:960px){.pill{display:none}}
 
 /* ───── 01 ARRIVE ───── */
-.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;background:var(--night);--at:clamp(108px,14vh,150px);--aw:min(calc((100svh - var(--at)) * .74),44vw)}
-.hero::before{content:"";position:absolute;inset:auto 0 0;height:70%;background:radial-gradient(60% 70% at 50% 100%,rgba(203,156,96,.16),transparent 70%);pointer-events:none}
-.hero-arch{position:absolute;z-index:1;top:var(--at);left:calc(50% - var(--aw) / 2);width:var(--aw);height:calc(100% - var(--at));border-radius:calc(var(--aw) / 2) calc(var(--aw) / 2) 0 0;overflow:hidden;background:var(--plaster);margin:0}
-.hero-arch-in{position:absolute;inset:0}
-.hero-arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 60%}
-.hero-arch-in::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,11,.1),transparent 30%,transparent 62%,rgba(16,14,11,.55))}
-.hero-copy{position:absolute;z-index:3;left:var(--gut);top:calc(var(--at) + 7vh);width:calc(50vw - var(--aw) / 2 - var(--gut) - 40px);max-width:440px;display:grid;gap:2.2rem}
-.hero-copy h1{font-size:clamp(2.3rem,3.7vw,4.6rem);line-height:.98}
-.hero-cta{display:grid;gap:.2rem;justify-items:start}
-.hero-aside{position:absolute;z-index:3;right:var(--gut);top:calc(var(--at) + 7vh);display:grid;gap:2.6rem;justify-items:end;text-align:right;font:400 .7rem/2.2 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--soft-d)}
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;background:var(--night)}
+.hero-arch{position:absolute;left:calc(50% - min(23vw,320px));top:clamp(100px,13vh,132px);bottom:0;width:min(46vw,640px);border-radius:min(23vw,320px) min(23vw,320px) 0 0;overflow:hidden;margin:0;z-index:1}
+.hero-arch-in{position:absolute;inset:0;transform:scale(1.07);transform-origin:50% 75%;clip-path:inset(0% 0% 0% 0%)}
+.hero-arch img{width:100%;height:100%;object-fit:cover;object-position:47% 64%}
+.hero-veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(18,16,13,.55),rgba(18,16,13,.2) 45%,rgba(18,16,13,.8));opacity:0;pointer-events:none}
+.hero-copy{position:absolute;left:var(--gut);top:31vh;z-index:3;width:min(25vw,360px);display:grid;gap:2rem}
+.hero-copy h1{font-size:clamp(2.4rem,3.9vw,4.4rem);line-height:.98}
+.hero-cta{display:grid;gap:.4rem;justify-items:start}
+.hero-aside{position:absolute;right:var(--gut);top:31vh;z-index:3;display:grid;gap:2.4rem;justify-items:end;text-align:right;font:400 .72rem/2.1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--soft-d)}
 .cue{display:grid;justify-items:end;gap:14px;color:var(--plaster)}
-.cue i{width:1px;height:72px;background:linear-gradient(var(--plaster),transparent);margin-right:3px;transform-origin:top;animation:cue 2.6s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
-.hero-word{position:absolute;left:var(--gut);right:var(--gut);bottom:3.2vh;z-index:3;margin:0;display:flex;justify-content:space-between;font:300 clamp(76px,15vw,256px)/.8 var(--sans);pointer-events:none}
+.cue i{width:1px;height:64px;background:linear-gradient(var(--plaster),transparent);margin-right:3px}
+.hero-word{position:absolute;left:var(--gut);right:var(--gut);bottom:3.5vh;z-index:3;margin:0;display:flex;justify-content:space-between;font:300 clamp(76px,14.6vw,236px)/.8 var(--sans);pointer-events:none;text-shadow:0 0 60px rgba(18,16,13,.5)}
 .hero-word .l{display:block;overflow:hidden;padding-top:.06em}
 .hero-word .l>span{display:block}
-.hero-enter{position:absolute;inset:0;z-index:4;display:grid;place-content:center;text-align:center;gap:1.8rem;color:var(--ink);pointer-events:none;opacity:0}
-.hero-enter .label{justify-self:center;color:var(--clay)}
-.hero-enter .d{font-size:clamp(3.8rem,11vw,11.5rem);font-style:italic}
+.hero-enter{position:absolute;inset:0;z-index:4;display:grid;place-content:center;text-align:center;gap:1.8rem;pointer-events:none;opacity:0}
+.hero-enter .label{justify-self:center}
+.hero-enter .d{font-size:clamp(3.6rem,10vw,10rem);font-style:italic}
 @media (max-width:759px){
-  .hero{min-height:600px;--aw:78vw}
-  .hero-arch{top:92px;height:52svh}
+  .hero{min-height:600px}
+  .hero-arch{left:11vw;width:78vw;top:92px;bottom:auto;height:50svh;border-radius:39vw 39vw 0 0}
   .hero-aside{display:none}
-  .hero-word{top:calc(92px + 52svh - .52em);bottom:auto;font-size:19.5vw}
-  .hero-copy{top:auto;bottom:calc(5svh + env(safe-area-inset-bottom,0px));right:var(--gut);width:auto;max-width:none;gap:1.2rem}
+  .hero-word{top:calc(92px + 50svh - .5em);bottom:auto;font-size:19.5vw}
+  .hero-copy{top:auto;bottom:calc(5svh + env(safe-area-inset-bottom,0px));right:var(--gut);width:auto;gap:1.2rem}
   .hero-copy .label{display:none}
-  .hero-copy h1{font-size:clamp(2rem,8.4vw,2.6rem)}
+  .hero-copy h1{font-size:clamp(2rem,8.6vw,2.6rem)}
   .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem}
   .hero-cta .btn,.hero-cta .link{white-space:nowrap;letter-spacing:.18em}
   .hero-cta .btn{padding-inline:1.15rem}
@@ -148,147 +138,130 @@ button{font:inherit;color:inherit}
 @media (max-width:759px) and (max-height:640px){.hero-word{display:none}}
 
 /* ───── 02 ENTER ───── */
-.exp{position:relative;z-index:2;background:var(--plaster);padding-block:clamp(110px,12vw,190px) var(--sec)}
-.exp-state{font-size:clamp(2.2rem,4.5vw,5.2rem);line-height:1.04;max-width:22ch;margin-top:2.2rem}
+.exp{position:relative;z-index:2;padding-block:var(--sec)}
+.exp-top{display:grid;grid-template-columns:minmax(0,1fr);gap:2.4rem;max-width:1180px}
+.exp-state{font-size:clamp(2.4rem,5.4vw,5.6rem);line-height:1.02}
 .exp-state em{color:var(--clay)}
-.exp-comp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(16px,2vw,32px);margin-top:clamp(90px,11vw,180px);align-items:start}
-.exp-main{grid-column:1/8;width:min(calc(100% + var(--gut)),640px);aspect-ratio:1;margin-left:calc(var(--gut) * -1)}
-.exp-main img{object-position:50% 60%}
-.exp-sub{grid-column:6/9;grid-row:1;width:min(100%,300px);aspect-ratio:3/4;margin-top:clamp(240px,30vw,470px);position:relative;z-index:2;justify-self:end}
-.exp-sub img{object-position:30% 82%}
-.exp-text{grid-column:9/13;grid-row:1;display:grid;gap:3rem;padding-top:clamp(20px,4vw,72px)}
-.exp-lede{font-size:1.1rem;line-height:1.8;margin:0;max-width:38ch}
-.notes{display:grid;gap:2rem;margin:0;padding:0;list-style:none;counter-reset:n}
-.notes li{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:.25rem 0;counter-increment:n}
-.notes li::before{content:counter(n,lower-roman)".";grid-row:span 2;font:italic 400 1rem/1.9 var(--display);color:var(--clay)}
-.notes h3{margin:0;font:italic 400 1.5rem/1.2 var(--display)}
-.notes p{margin:0;font-size:.95rem;line-height:1.6}
+.exp-comp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(16px,2vw,32px);margin-top:clamp(80px,10vw,160px);align-items:start}
+.exp-main{grid-column:1/7;aspect-ratio:1;width:min(100%,480px);justify-self:end}
+.exp-sub{grid-column:6/9;width:min(100%,262px);aspect-ratio:1;margin-top:clamp(150px,17vw,280px);position:relative;z-index:2;box-shadow:0 30px 70px rgba(26,23,19,.22)}
+.exp-text{grid-column:9/13;display:grid;gap:2.4rem;padding-top:clamp(40px,6vw,96px)}
+.notes{display:grid;gap:0;border-top:1px solid var(--hair-l)}
+.notes div{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:1rem;padding:1.15rem 0;border-bottom:1px solid var(--hair-l)}
+.notes h3{margin:0;font:400 1.45rem/1.2 var(--display);font-style:italic}
+.notes p{margin:0;color:var(--soft-l);font-size:.95rem;line-height:1.6}
 @media (max-width:959px){
   .exp-comp{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .exp-main{grid-column:1/6;width:calc(100% + var(--gut))}
-  .exp-sub{grid-column:4/7;grid-row:2;margin-top:-34%;width:100%;max-width:240px}
-  .exp-text{grid-column:1/-1;grid-row:3;padding-top:3.4rem}
+  .exp-main{grid-column:1/6;width:auto;justify-self:stretch;margin-left:calc(var(--gut) * -1)}
+  .exp-sub{grid-column:4/7;margin-top:-30%;width:auto}
+  .exp-text{grid-column:1/-1;padding-top:3rem}
 }
+@media (max-width:520px){.notes div{grid-template-columns:1fr;gap:.3rem}}
 
-/* ───── 03 INTERIOR: a walk through three rooms ───── */
-.rooms{position:relative;z-index:2;background:var(--cream);--pw:min(52vw,82vh,800px)}
-.rooms-head{display:none}
-.room{position:relative;display:grid;grid-template-columns:var(--pw) minmax(0,1fr);min-height:100vh;align-items:center}
-.room-ph{position:relative;height:100vh;overflow:hidden;margin:0}
-.room-ph .pi{position:absolute;inset:0}
-.room-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.room-ph.win{background:var(--umber);display:grid;place-items:center;padding-top:66px}
-.awin{position:relative;height:calc(100vh - 190px);aspect-ratio:459/820;border-radius:999px 999px 0 0;overflow:hidden}
-.room-txt{padding:0 var(--gut) 0 clamp(48px,7vw,150px);display:grid;gap:1.5rem;max-width:720px}
-.room-n{font:italic 400 clamp(5rem,11vw,11rem)/.8 var(--display);color:var(--clay);letter-spacing:-.04em}
-.room-txt p{margin:0;max-width:34ch;font-size:1.05rem}
-.rooms-rail{display:none}
-.js-motion .rooms.pinned .rooms-list{position:relative;height:100vh}
-.js-motion .rooms.pinned .room{position:absolute;inset:0}
-.js-motion .rooms.pinned .rooms-rail{display:flex;position:absolute;right:var(--gut);bottom:40px;z-index:10;gap:12px;align-items:center;font:400 .66rem/1 var(--sans);letter-spacing:.24em;color:var(--soft-l)}
-.rooms-rail i{display:block;width:120px;height:1px;background:var(--hair-l);position:relative;overflow:hidden}
-.rooms-rail i b{position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(0)}
+/* ───── 03 INTERIOR ───── */
+.story{position:relative;z-index:2;padding-block:0 var(--sec)}
+.frames{display:grid;gap:clamp(96px,12vw,180px)}
+.frame{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:center}
+.f-cap{display:grid;gap:1.4rem;max-width:30ch;align-content:center}
+.f-cap .num{color:var(--soft-l)}
+.f-cap h3{margin:0}
+.f-cap p{margin:0;color:var(--soft-l)}
+.f-art{position:relative;justify-self:center}
+.f-main{height:var(--h);aspect-ratio:var(--ar);max-width:100%}
+.f-sub{position:absolute;width:var(--sw,min(16vw,240px));aspect-ratio:1;left:calc(var(--sw,min(16vw,240px)) * -.55);bottom:9%;z-index:2;box-shadow:0 30px 70px rgba(26,23,19,.28)}
 @media (max-width:959px){
-  .rooms{padding-block:var(--sec) 2rem}
-  .rooms-head{display:grid;gap:1.4rem;margin-bottom:3.4rem}
-  .room{grid-template-columns:1fr;min-height:0;padding-bottom:5.5rem}
-  .room-ph{height:auto;aspect-ratio:var(--ar-m)}
-  .room-ph.win{aspect-ratio:auto;padding:56px 0 0}
-  .awin{height:auto;width:min(64vw,360px)}
-  .room-txt{padding:2.2rem var(--gut) 0}
-  .room-n{font-size:4.6rem}
+  .frame{grid-template-columns:1fr;gap:2rem}
+  .f-art{justify-self:stretch;margin-inline:calc(var(--gut) * -1)}
+  .f-main{height:auto;width:100%;aspect-ratio:var(--ar-m,var(--ar))}
+  .f-sub{--sw:38vw;left:auto;right:var(--gut);bottom:-14%}
+  .f-cap{padding-top:1rem}
+  .frame:has(.f-sub) .f-cap{padding-top:calc(14vw + 1rem)}
 }
+.js-motion .story.pinned{padding-block:0;height:100vh}
+.js-motion .story.pinned .frames{display:block;position:relative;height:100vh}
+.js-motion .story.pinned .frame{position:absolute;inset:0;padding-top:66px;grid-template-rows:100%}
+.js-motion .story.pinned .f-main{height:min(var(--h),calc(100vh - 140px))}
+.story-rail{display:none}
+.js-motion .story.pinned .story-rail{display:flex;position:absolute;right:var(--gut);top:50%;transform:translateY(-50%);z-index:10;flex-direction:column;gap:14px;align-items:flex-end}
+.story-rail span{width:24px;height:1px;background:var(--hair-l);transition:width .6s var(--ease),background .6s}
+.story-rail span.on{width:48px;background:var(--ink)}
 
-/* ───── DOOR into the food ───── */
-.door{position:relative;z-index:2;background:var(--cream);height:clamp(520px,96vh,900px)}
+/* ───── 04 FOOD ───── */
+.door{position:relative;z-index:2;background:var(--plaster);height:clamp(480px,92vh,860px)}
 .door-dark{position:absolute;inset:0;background:var(--umber);display:grid;place-content:center;text-align:center;gap:2rem;padding-inline:var(--gut)}
 .door-dark .label{justify-self:center}
 .door-dark p{margin:0 auto;max-width:40ch;color:var(--soft-d)}
-.js-motion .door-dark{clip-path:inset(12% 30% 0% 30% round 20vw 20vw 0vw 0vw)}
-
-/* ───── 04 SIGNATURE DISHES: one arch window, the plates change inside it ───── */
-.dishes{position:relative;z-index:2;background:var(--umber);--dwh:min(calc(100vh - 170px),860px);--dww:calc(var(--dwh) * .64)}
-.dish{position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) var(--dww) minmax(0,1fr);gap:clamp(32px,4.4vw,88px);align-items:center;padding:96px var(--gut) 40px}
-.dish-ph{width:var(--dww);height:var(--dwh);border-radius:999px 999px 0 0;overflow:hidden;position:relative;margin:0}
-.dish-ph .pi{position:absolute;inset:0}
-.dish-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--z,1));transform-origin:var(--o,50% 50%)}
-.dish-l{display:grid;gap:1.6rem;justify-items:end;text-align:right}
-.dish-l h3{font-size:clamp(3rem,5.6vw,6.8rem);line-height:.92}
-.dish-l h3.long{font-size:clamp(2.6rem,4.3vw,5.2rem)}
-.dish-l .num{color:var(--lamp)}
-.dish-r{display:grid;gap:1.6rem;max-width:32ch}
-.dish-r p{margin:0;color:var(--soft-d);font-size:1.02rem}
-.on-plate{display:grid;gap:.6rem;margin:0}
-.on-plate dt{font:500 .64rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--stone)}
-.on-plate dd{margin:0;font:italic 400 1.2rem/1.5 var(--display);color:var(--plaster)}
+.js-motion .door-dark{clip-path:inset(14% 29% 0% 29% round 21vw 21vw 0vw 0vw)}
+.dishes{position:relative;z-index:2;background:var(--umber)}
+.dish{position:relative;overflow:hidden;padding-block:clamp(56px,7vw,96px)}
+.dish-in{position:relative;display:grid;grid-template-columns:minmax(0,5.4fr) minmax(0,5fr);gap:0;align-items:center}
+.dish-ph{height:var(--h);aspect-ratio:var(--ar);max-width:100%;justify-self:end;margin-right:clamp(24px,4vw,72px)}
+.dish-text{display:grid;gap:1.5rem;max-width:46ch;position:relative;z-index:2}
+.dish-text h3{font-size:clamp(3.2rem,6.4vw,7.2rem);line-height:.94;text-shadow:0 2px 40px rgba(18,16,13,.45)}
+.mask.t{margin-left:calc(clamp(24px,4vw,72px) * -1 - 7vw);position:relative;z-index:3}
+.dish-text p{margin:0;color:var(--soft-d);max-width:40ch}
+.dish-idx{color:var(--stone)}
+.mask{display:block;overflow:hidden;padding-bottom:.08em}
+.mask>*{display:block}
+.on-plate{border-top:1px solid var(--hair-d);padding-top:1.2rem;display:grid;gap:.5rem;margin:0;max-width:40ch}
+.on-plate dt{font:500 .66rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
+.on-plate dd{margin:0;font-size:1rem;color:var(--plaster)}
 .price{display:flex;align-items:baseline;gap:1rem;font:400 1.5rem/1 var(--display);color:var(--lamp)}
-.price small{font:400 .68rem/1 var(--sans);letter-spacing:.16em;color:var(--stone)}
+.price small{font:400 .7rem/1 var(--sans);letter-spacing:.16em;color:var(--stone)}
 .dish-rail{display:none}
+@media (max-width:959px){
+  .dish-in{grid-template-columns:1fr;gap:2.4rem}
+  .dish-ph{justify-self:stretch;margin-inline:calc(var(--gut) * -1);height:auto;width:auto;aspect-ratio:var(--ar-m,var(--ar))}
+  .dish-ph{max-width:none}
+  .mask.t{margin-left:0}
+  .dish-text h3{font-size:clamp(2.8rem,12vw,4rem)}
+}
 .js-motion .dishes.pinned .dish-list{position:relative;height:100vh}
-.js-motion .dishes.pinned .dish{position:absolute;inset:0}
-.js-motion .dishes.pinned .dish-rail{display:flex;position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:20;gap:22px}
-.dish-rail span{font:400 .66rem/1 var(--sans);letter-spacing:.22em;color:var(--stone);font-variant-numeric:tabular-nums;transition:color .6s}
+.js-motion .dishes.pinned .dish{position:absolute;inset:0;display:grid;align-items:center;padding-block:66px 0}
+.js-motion .dishes.pinned .dish-ph{height:min(var(--h),calc(100vh - 116px))}
+.js-motion .dishes.pinned .dish-rail{display:flex;position:absolute;right:var(--gut);top:50%;transform:translateY(-50%);z-index:20;flex-direction:column;gap:18px;align-items:flex-end}
+.dish-rail span{display:flex;align-items:center;gap:12px;font:400 .66rem/1 var(--sans);letter-spacing:.2em;color:var(--stone);font-variant-numeric:tabular-nums;transition:color .6s}
+.dish-rail span::after{content:"";width:22px;height:1px;background:currentColor;transition:width .6s var(--ease)}
 .dish-rail span.on{color:var(--plaster)}
-@media (max-width:959px){
-  .dish{grid-template-columns:1fr;min-height:0;gap:2rem;padding:72px var(--gut)}
-  .dish-ph{order:-1;width:min(84vw,440px);height:auto;aspect-ratio:.64;justify-self:center}
-  .dish-l{justify-items:start;text-align:left;gap:1rem}
-  .dish-l h3{font-size:clamp(2.8rem,12vw,4rem)}
-}
-
-/* small plates */
-.plates{position:relative;z-index:2;background:var(--umber);padding-block:clamp(60px,8vw,140px) var(--sec)}
-.plates-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(16px,2vw,32px);align-items:start}
-.pl-big{grid-column:1/9;grid-row:1;width:min(calc(100% + var(--gut)),840px);aspect-ratio:729/522;margin-left:calc(var(--gut) * -1)}
-.pl-txt{grid-column:9/13;grid-row:1;display:grid;gap:1.6rem;padding-top:clamp(20px,4vw,60px)}
-.pl-txt p{margin:0;color:var(--soft-d);max-width:34ch}
-.pl-small{grid-column:7/11;grid-row:2;width:min(100%,480px);margin-top:clamp(-150px,-10vw,-60px);position:relative;z-index:2}
-.pl-small .ph{aspect-ratio:729/522}
-.pl-small figcaption,.pl-cap{display:flex;gap:1rem;margin-top:1rem;font-size:.88rem;color:var(--soft-d)}
-.pl-small figcaption b,.pl-cap b{font-weight:400;color:var(--lamp);font-variant-numeric:tabular-nums}
-@media (max-width:959px){
-  .plates-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .pl-big{grid-column:1/-1;width:calc(100% + var(--gut))}
-  .pl-txt{grid-column:1/-1;grid-row:3;padding-top:3rem}
-  .pl-small{grid-column:2/-1;margin-top:-12%;justify-self:end}
-}
+.dish-rail span.on::after{width:46px}
 
 /* ───── 05 MENU ───── */
-.menu{position:relative;z-index:2;background:var(--plaster);padding-block:var(--sec)}
+.menu{position:relative;z-index:2;padding-block:var(--sec)}
 .menu-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,3.6fr);gap:clamp(40px,5vw,96px);align-items:start}
 .menu-left{position:sticky;top:120px;display:grid;gap:2.6rem}
-.menu-left .d{font-size:clamp(4rem,8.6vw,9.4rem);line-height:.84}
-.menu-left p{margin:0;font-size:.95rem;max-width:34ch}
-.cats{display:grid}
-.cat{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;width:100%;text-align:left;background:none;border:0;padding:.7rem 0;cursor:pointer;font:400 1.7rem/1.1 var(--display);color:var(--soft-l);transition:color .5s,padding .7s var(--ease)}
-.cat small{font:400 .66rem/1 var(--sans);letter-spacing:.14em;font-variant-numeric:tabular-nums}
+.menu-left .d{font-size:clamp(4rem,9vw,9.4rem);line-height:.82}
+.menu-left p{margin:0;color:var(--soft-l);font-size:.95rem;max-width:34ch}
+.cats{display:grid;gap:0;border-top:1px solid var(--hair-l)}
+.cat{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--hair-l);padding:1rem 0;cursor:pointer;font:300 1.7rem/1.1 var(--display);color:var(--soft-l);transition:color .5s,padding .7s var(--ease)}
+.cat small{font:400 .68rem/1 var(--sans);letter-spacing:.14em;font-variant-numeric:tabular-nums}
 .cat:hover{color:var(--ink)}
-.cat[aria-selected="true"]{color:var(--ink);font-style:italic;padding-left:1.2rem}
+.cat[aria-selected="true"]{color:var(--ink);font-style:italic;padding-left:.9rem}
 .panel{min-width:0;padding-top:.4rem}
 .panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:1.6rem}
-.panel-head .d{font-size:clamp(2.4rem,3.6vw,3.8rem);font-style:italic}
+.panel-head .d{font-size:clamp(2.4rem,3.6vw,3.6rem);font-style:italic}
 .items{list-style:none;margin:0;padding:0}
 .item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem 1.5rem;padding:1.5rem 0;border-top:1px solid var(--hair-l);outline:0;cursor:default}
 .item:last-child{border-bottom:1px solid var(--hair-l)}
-.item h4{margin:0;font:400 1.7rem/1.12 var(--display);transition:transform .8s var(--ease)}
-.item p{margin:0;grid-column:1;font-size:.95rem;line-height:1.55}
+.item h4{margin:0;font:400 1.75rem/1.12 var(--display);transition:transform .8s var(--ease)}
+.item p{margin:0;grid-column:1;color:var(--soft-l);font-size:.95rem;line-height:1.55}
 .item .pr{grid-row:1;grid-column:2;font:400 1.15rem/1.6 var(--display);color:var(--clay);font-variant-numeric:tabular-nums}
 .item:hover h4,.item:focus-visible h4,.item.is-on h4{transform:translateX(12px)}
 .item.is-on h4{font-style:italic}
 .item:focus-visible{box-shadow:inset 0 -1px 0 var(--ink)}
-.menu-foot{margin:1.6rem 0 0;font-size:.85rem}
+.menu-foot{margin:1.6rem 0 0;font-size:.85rem;color:var(--soft-l)}
 .alcove{position:sticky;top:120px;margin:0;display:grid;gap:1rem}
-.alc{position:relative;width:min(100%,420px);aspect-ratio:5/7;border-radius:999px 999px 0 0;overflow:hidden;background:var(--cream)}
+.alc{position:relative;width:min(100%,400px);aspect-ratio:5/7;border-radius:999px 999px 0 0;overflow:hidden;background:var(--cream);box-shadow:inset 0 30px 60px rgba(26,23,19,.12)}
 .alc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
+.alc img.print{object-fit:contain;padding:0 9%;filter:drop-shadow(0 18px 30px rgba(26,23,19,.28))}
 .alc img.out{opacity:0;transform:scale(1.05)}
-.alcove figcaption{font:italic 400 1.1rem/1.4 var(--display);color:var(--soft-l)}
+.alcove figcaption{font:300 1.1rem/1.4 var(--display);font-style:italic;color:var(--soft-l)}
 @media (max-width:1199px){.menu-grid{grid-template-columns:minmax(0,4fr) minmax(0,6fr)}.alcove{display:none}}
 @media (max-width:959px){
   .menu-grid{grid-template-columns:1fr;gap:2rem}
   .menu-left{position:static;gap:2rem}
   .cats{position:sticky;top:calc(66px + env(safe-area-inset-top,0px));z-index:5;display:flex;gap:1.6rem;overflow-x:auto;scrollbar-width:none;background:var(--plaster);margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);border-bottom:1px solid var(--hair-l)}
   .cats::-webkit-scrollbar{display:none}
-  .cat{width:auto;flex:0 0 auto;font-size:1.35rem;padding:1rem 0;border-bottom:2px solid transparent}
+  .cat{width:auto;flex:0 0 auto;border:0;font-size:1.35rem;padding:1rem 0;border-bottom:2px solid transparent}
   .cat[aria-selected="true"]{padding-left:0;border-bottom-color:var(--ink)}
   .cat small{display:none}
   .alcove{display:grid;position:static;order:1}
@@ -298,116 +271,88 @@ button{font:inherit;color:inherit}
 }
 
 /* ───── PATISSERIE ───── */
-.sugar{position:relative;z-index:2;background:var(--sugar);overflow:hidden;min-height:max(100vh,760px);display:grid;align-content:space-between}
-.sugar-ph{position:absolute;right:0;top:0;bottom:0;width:min(46vw,700px)}
-.sugar-ph img{object-position:50% 62%}
-.sugar-ph figcaption{position:absolute;left:1.6rem;bottom:1.4rem;font:italic 400 1.05rem/1.3 var(--display);color:var(--plaster);text-shadow:0 1px 18px rgba(16,14,11,.6)}
-.pat-word{position:relative;z-index:3;margin:0;padding-top:clamp(110px,13vh,160px);font:italic 400 clamp(5rem,19.5vw,23rem)/.8 var(--display);letter-spacing:-.04em;white-space:nowrap;color:var(--ink);padding-left:2vw}
-.pat-text{position:relative;z-index:2;width:min(42vw,520px);margin-left:var(--gut);padding-block:3rem clamp(70px,9vw,140px);display:grid;gap:1.5rem}
+.sugar{position:relative;z-index:2;background:var(--sugar);color:var(--ink);overflow:hidden;padding-block:var(--sec)}
+.pat-word{font:300 clamp(5.4rem,20vw,21rem)/.8 var(--display);font-style:italic;white-space:nowrap;margin:0;color:var(--ink);padding-left:4vw;letter-spacing:-.02em}
+.pat-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(16px,2vw,32px);align-items:end;margin-top:clamp(-170px,-11vw,-60px);position:relative}
+.pat-arch{grid-column:6/10;width:min(100%,430px);aspect-ratio:3/5;justify-self:center;z-index:2}
+.pat-arch img{object-position:50% 70%}
+.pat-close{grid-column:2/5;grid-row:1;width:min(100%,300px);aspect-ratio:1;align-self:end;justify-self:end;margin-bottom:12%}
+.pat-close img{object-position:50% 100%}
+.pat-text{grid-column:10/13;display:grid;gap:1.4rem;padding-bottom:2rem}
+.pat-text h3{font-size:clamp(2rem,2.8vw,2.8rem);line-height:1.04}
+.pat-text p{margin:0;color:var(--soft-l)}
 .pat-text .price{color:var(--clay)}
+.pat-cap{grid-column:2/5;grid-row:2;font:300 1.05rem/1.4 var(--display);font-style:italic;color:var(--soft-l);justify-self:end;text-align:right;max-width:24ch;margin-top:-6%}
 @media (max-width:959px){
-  .sugar{display:flex;flex-direction:column;min-height:0;padding-bottom:var(--sec)}
-  .pat-word{order:-1}
-  .pat-word{padding-top:var(--sec);font-size:23vw}
-  .sugar-ph{position:relative;width:calc(100% - var(--gut));margin:-5vw 0 0 auto;aspect-ratio:3/4;bottom:auto}
-  .pat-text{width:auto;margin-inline:var(--gut);padding-bottom:0}
+  .pat-grid{grid-template-columns:repeat(6,minmax(0,1fr));margin-top:-8vw}
+  .pat-arch{grid-column:2/7;width:100%}
+  .pat-close{grid-column:1/4;grid-row:2;margin:-28% 0 0;justify-self:start;width:100%;max-width:220px}
+  .pat-cap{grid-column:4/7;grid-row:2;justify-self:start;text-align:left;margin:1rem 0 0}
+  .pat-text{grid-column:1/-1;padding-top:3rem}
 }
 
 /* ───── DRINKS ───── */
-.drinks{position:relative;z-index:2;background:var(--night);padding-block:var(--sec);overflow:hidden}
-.drinks-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
-.drinks-stage{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;margin-top:clamp(48px,6vw,96px)}
-.drink-ph{height:min(88vh,900px);aspect-ratio:729/1218}
-.dn{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);position:relative;z-index:2}
-.dn-l{justify-content:flex-end;text-align:right;margin-right:-110px;margin-top:6%}
-.dn-r{margin-left:-120px;margin-bottom:12%}
-.dn-r .ln{order:-1}
-.dn .ln{display:block;width:clamp(80px,10vw,190px);height:1px;background:var(--plaster);flex:0 0 auto;transform-origin:var(--from,right)}
-.dn-r .ln{--from:left}
-.dn .num{color:var(--lamp);display:block;margin-bottom:.9rem}
-.dn b{display:block;font:400 clamp(1.8rem,2.7vw,3rem)/1.04 var(--display)}
-.dn small{display:block;margin-top:.7rem;color:var(--soft-d);font-size:.92rem;max-width:24ch}
-.dn-l small{margin-left:auto}
-@media (max-width:959px){
-  .drinks-stage{grid-template-columns:1fr;gap:2.4rem}
-  .drink-ph{height:auto;width:min(84vw,460px);justify-self:center}
-  .dn-l,.dn-r{margin:0;justify-content:flex-start;text-align:left}
-  .dn-l small{margin-left:0}
-  .dn .ln{display:none}
-  .dn-l{order:2}.dn-r{order:3}
-}
+.drinks{position:relative;z-index:2;padding-block:var(--sec);overflow:hidden}
+.drinks-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,140px);align-items:center}
+.drink-ph{height:min(88vh,860px);aspect-ratio:243/406;max-width:100%;margin-left:calc(var(--gut) * -1)}
+.drinks-txt{display:grid;gap:1rem}
+.drinks-txt .d{margin:1.4rem 0 clamp(32px,5vw,72px)}
+.drink{display:grid;grid-template-columns:3.4rem minmax(0,1fr);gap:.3rem 0;padding:1.8rem 0;border-top:1px solid var(--hair-d)}
+.drink:last-of-type{border-bottom:1px solid var(--hair-d)}
+.drink .num{grid-row:span 2;color:var(--lamp);padding-top:.9rem}
+.drink b{font:300 clamp(2rem,3.4vw,3.2rem)/1.05 var(--display)}
+.drink span:last-child{color:var(--soft-d);font-size:.95rem}
+@media (max-width:959px){.drinks-grid{grid-template-columns:1fr}.drink-ph{height:auto;width:min(86vw,460px)}}
 
-.coffee{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(16px,2vw,32px);align-items:start;margin-top:clamp(120px,14vw,220px)}
-.cf-big{grid-column:1/9;grid-row:1;margin:0 0 0 calc(var(--gut) * -1);width:min(calc(100% + var(--gut)),980px)}
-.cf-big .ph{aspect-ratio:1360/765}
-.cf-cup{grid-column:9/12;grid-row:1/3;margin:clamp(160px,18vw,300px) 0 0;width:min(100%,360px)}
-.cf-cup .ph{aspect-ratio:574/1020}
-.cf-cup .ph img{object-position:50% 40%}
-.cf-txt{grid-column:2/8;grid-row:2;display:grid;gap:1.4rem;padding-top:clamp(48px,5vw,80px)}
-.cf-txt p{margin:0;color:var(--soft-d);max-width:36ch}
-.coffee figcaption{display:flex;gap:1rem;margin-top:1rem;font-size:.88rem;color:var(--soft-d)}
-.coffee figcaption b{font-weight:400;color:var(--lamp);font-variant-numeric:tabular-nums}
-.cf-big figcaption{padding-left:var(--gut)}
-@media (max-width:959px){
-  .coffee{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .cf-big{grid-column:1/-1;width:calc(100% + var(--gut))}
-  .cf-cup{grid-column:3/-1;grid-row:2;margin-top:-18%;justify-self:end;width:100%;max-width:260px;position:relative;z-index:2}
-  .cf-txt{grid-column:1/-1;grid-row:3}
-}
-
-/* ───── 06 AFTER DARK: horizontal night walk ───── */
-.gallery{position:relative;z-index:2;background:var(--night);overflow:hidden;padding-block:clamp(80px,9vw,140px)}
-.track{display:flex;gap:clamp(28px,4vw,80px);align-items:center;padding-inline:var(--gut);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+/* ───── 06 EVENING: gallery + atmosphere ───── */
+.gallery{position:relative;z-index:2;overflow:hidden;padding-block:clamp(80px,9vw,140px)}
+.gal-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.gal-head p{margin:0;max-width:32ch;color:var(--soft-d)}
+.track{display:flex;gap:clamp(24px,3.4vw,64px);align-items:flex-start;padding-inline:var(--gut);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .track::-webkit-scrollbar{display:none}
-.g-head{flex:0 0 auto;width:min(80vw,460px);display:grid;gap:1.8rem;scroll-snap-align:start}
-.g-head p{margin:0;color:var(--soft-d);max-width:30ch}
-.shot{flex:0 0 auto;margin:0;display:grid;gap:1.1rem;scroll-snap-align:start}
-.shot .ph{height:min(calc(100vh - 250px),var(--mh));aspect-ratio:var(--ar)}
-.shot img{transform:scale(var(--z,1));transform-origin:var(--o,50% 50%)}
-.shot .pi{position:absolute;inset:0}
-.shot figcaption{display:flex;gap:1rem;font-size:.88rem;color:var(--soft-d)}
-.shot figcaption b{font-weight:400;color:var(--lamp);font-variant-numeric:tabular-nums}
-.shot.s-up{align-self:flex-start}.shot.s-dn{align-self:flex-end}
-@media (max-width:959px){.shot .ph{height:min(var(--mh),60svh)}.shot.s-up,.shot.s-dn{align-self:center}}
-.js-motion .gallery.pinned{height:100vh;display:flex;align-items:center;padding-block:66px 0}
-.js-motion .gallery.pinned .track{overflow:visible;scroll-snap-type:none;width:max-content;height:calc(100vh - 140px)}
+.shot{flex:0 0 auto;margin:0;display:grid;gap:1rem;scroll-snap-align:start}
+.shot .ph{height:var(--h);aspect-ratio:var(--ar)}
+.shot .ph img{transform:scale(1.08)}
+.shot figcaption{display:flex;gap:1rem;font-size:.86rem;color:var(--soft-d)}
+.shot figcaption b{font-weight:400;color:var(--stone);font-variant-numeric:tabular-nums}
+.shot.dn{margin-top:var(--dn,0)}
+@media (max-width:959px){.shot .ph{height:min(var(--h),58svh)}.shot.dn{margin-top:0}.gal-head{grid-template-columns:1fr}}
+.js-motion .gallery.pinned{height:100vh;display:flex;flex-direction:column;justify-content:center;padding-block:66px 0}
+.js-motion .gallery.pinned .track{overflow:visible;scroll-snap-type:none;width:max-content}
+.js-motion .gallery.pinned .gal-head{margin-bottom:clamp(28px,3.5vw,48px)}
+.js-motion .gallery.pinned .gal-head .d{font-size:clamp(3rem,6vw,6.4rem)}
+.js-motion .gallery.pinned .shot .ph{height:min(var(--h),calc(100vh - 370px))}
+.js-motion .gallery.pinned .shot.dn{margin-top:min(var(--dn,0px),6vh)}
 
-/* stay a while — the lit sign */
-.stay{position:relative;z-index:2;background:var(--night)}
-.stay-in{position:relative;display:grid;place-items:center;gap:2rem;padding-block:var(--sec);overflow:hidden;text-align:center}
-.stay-win{position:relative;z-index:2;height:min(74vh,700px);aspect-ratio:.8;max-width:84vw;border-radius:999px 999px 0 0;overflow:hidden}
-.stay-win img{object-position:50% 50%}
-.stay-word{font:italic 400 clamp(3.4rem,9.4vw,12rem)/.9 var(--display);letter-spacing:-.03em;margin:0;white-space:nowrap}
-.stay-cta{display:grid;gap:1.6rem;justify-items:center}
-.js-motion .stay.tall{height:230vh}
-.js-motion .stay.tall .stay-in{position:sticky;top:0;height:100vh;padding:0;display:block}
-.js-motion .stay.tall .stay-win{position:absolute;left:50%;top:50%;translate:-50% -56%;height:min(68vh,660px)}
-.js-motion .stay.tall .stay-word{position:absolute;top:50%;translate:0 -50%;z-index:1}
-.js-motion .stay.tall .sw-l{right:50%}
-.js-motion .stay.tall .sw-r{left:50%}
-.js-motion .stay.tall .stay-cta{position:absolute;left:0;right:0;bottom:5vh;z-index:3;gap:1.2rem}
+.atmo{position:relative;z-index:2;height:115vh;min-height:640px;overflow:hidden;background:var(--night)}
+.atmo .ph{position:absolute;top:0;bottom:0;left:50%;width:min(100%,920px);transform:translateX(-50%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+@media (max-width:959px){.atmo .ph{-webkit-mask-image:none;mask-image:none}}
+.atmo .ph img{object-position:50% 30%;transform:scale(1.12)}
+.atmo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--night) 0%,rgba(18,16,13,.15) 22%,rgba(18,16,13,.2) 60%,var(--night) 100%);pointer-events:none}
+.atmo-txt{position:absolute;left:0;right:0;bottom:16vh;z-index:2;text-align:center;display:grid;gap:2rem;justify-items:center;padding-inline:var(--gut)}
+.atmo-txt .d{font-size:clamp(3.4rem,9vw,9.6rem);font-style:italic;text-shadow:0 4px 60px rgba(18,16,13,.6)}
 
 /* ───── 07 RESERVE ───── */
 .reserve{position:relative;z-index:2;background:var(--umber);padding-block:var(--sec)}
 .res-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(48px,8vw,140px);align-items:start}
 .res-intro{position:sticky;top:120px;display:grid;gap:2rem}
 .res-intro p{margin:0;color:var(--soft-d);max-width:36ch}
-.res-arch{width:min(66%,280px);aspect-ratio:3/4;margin-top:1rem}
-.res-arch img{object-position:40% 78%}
+.res-arch{width:min(70%,300px);aspect-ratio:3/4;margin-top:1rem}
+.res-arch img{object-position:50% 50%}
 form{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2.4rem 1.8rem}
 .f{display:grid;gap:.55rem;grid-column:span 6;min-width:0}
 .f.s2{grid-column:span 2}.f.s3{grid-column:span 3}
-.f label,.f .lab{font:500 .64rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--stone)}
+.f label,.f .lab{font:500 .66rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
 .f input,.f textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--hair-d);color:var(--plaster);font:300 1.25rem/1.4 var(--sans);padding:.6rem 0;border-radius:0;transition:border-color .4s;min-height:52px}
 .f textarea{resize:vertical;min-height:100px;font-size:1.05rem}
 .f input:focus,.f textarea:focus{outline:0;border-bottom-color:var(--lamp)}
-.f input::placeholder,.f textarea::placeholder{color:rgba(236,228,214,.3)}
+.f input::placeholder,.f textarea::placeholder{color:rgba(237,230,218,.3)}
 .f input[type=date]::-webkit-calendar-picker-indicator,.f input[type=time]::-webkit-calendar-picker-indicator{filter:invert(.85);opacity:.55;cursor:pointer}
 .f .err{font-size:.8rem;color:#E2AA8C;min-height:1em}
 .guests{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair-d);min-height:52px}
 .guests button{width:44px;height:44px;background:none;border:1px solid var(--hair-d);border-radius:50%;cursor:pointer;font-size:1.1rem;transition:border-color .3s}
 .guests button:hover{border-color:var(--lamp)}
-.guests output{font:400 1.8rem/1 var(--display);font-variant-numeric:tabular-nums}
+.guests output{font:300 1.8rem/1 var(--display);font-variant-numeric:tabular-nums}
 .form-foot{grid-column:span 6;display:flex;flex-wrap:wrap;gap:1.2rem 2rem;align-items:center;justify-content:space-between;margin-top:.8rem}
 .form-foot small{color:var(--stone);max-width:36ch;font-size:.82rem}
 .done{display:grid;gap:1.6rem;align-content:start;border-top:1px solid var(--hair-d);padding-top:2.4rem}
@@ -415,30 +360,37 @@ form{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2.4rem 1.8re
 @media (max-width:959px){.res-grid{grid-template-columns:1fr}.res-intro{position:static}.res-arch{display:none}.f.s2{grid-column:span 3}.f.s2.g{grid-column:span 6}}
 @media (max-width:520px){.f.s2,.f.s3{grid-column:span 6}}
 
-/* ───── VISIT ───── */
-.loc{position:relative;z-index:2;background:var(--plaster);padding-block:var(--sec)}
-.loc-addr{font-size:clamp(3rem,8.2vw,9.6rem);line-height:.9;margin:2rem 0 clamp(56px,7vw,110px)}
-.loc-addr em{color:var(--clay)}
-.loc-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:2rem clamp(32px,4vw,72px);align-items:start}
-.loc-row dl{display:contents}
-.loc-row div{display:grid;gap:.7rem}
-.loc-row dt{font:500 .64rem/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--clay)}
-.loc-row dd{margin:0;font-size:1.02rem;font-weight:400}
-.loc-row dd em{font-style:normal;color:var(--soft-l);font-weight:300}
-.loc-cta{display:grid;gap:.4rem;justify-items:end}
-.copy{background:none;border:0;border-bottom:1px solid var(--hair-l);padding:0;margin-left:.6rem;font:500 .62rem/1.8 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--clay);cursor:pointer}
-@media (max-width:959px){.loc-row{grid-template-columns:1fr}.loc-cta{justify-items:start}}
+.loc{position:relative;z-index:2;padding-block:var(--sec)}
+.loc-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(48px,8vw,140px);align-items:center}
+.loc .d{margin:1.4rem 0 3rem}
+.facts{display:grid;margin:0}
+.facts div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:1rem;padding:1.3rem 0;border-top:1px solid var(--hair-d)}
+.facts div:last-child{border-bottom:1px solid var(--hair-d)}
+.facts dt{font:500 .66rem/2 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
+.facts dd{margin:0;font-size:1.05rem;font-weight:400}
+.facts dd em{font-style:normal;color:var(--stone);font-size:.92rem;font-weight:300}
+.copy{background:none;border:0;border-bottom:1px solid var(--hair-d);padding:0;margin-left:.9rem;font:500 .64rem/1.8 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--lamp);cursor:pointer}
+.loc-cta{display:flex;flex-wrap:wrap;gap:1rem 2.4rem;align-items:center;margin-top:2.8rem}
+.mapcard{position:relative;display:block;text-decoration:none;width:min(100%,520px);aspect-ratio:243/203;justify-self:center}
+.mapcard img{transition:transform 2s var(--ease)}
+.mapcard:hover img{transform:scale(1.04)}
+.mapcard span{position:absolute;left:0;right:0;bottom:0;padding:4rem 1.4rem 1.2rem;background:linear-gradient(transparent,rgba(18,16,13,.9));display:flex;justify-content:space-between;align-items:end;gap:1rem;font-size:.9rem}
+.mapcard b{font:500 .68rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--lamp);white-space:nowrap}
+@media (max-width:959px){.loc-grid{grid-template-columns:1fr}.facts div{grid-template-columns:110px minmax(0,1fr)}}
 
-/* ───── FOOTER ───── */
-footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(80px,9vw,140px) calc(40px + env(safe-area-inset-bottom,0px));overflow:hidden}
-.foot-word{display:flex;justify-content:space-between;font:300 clamp(64px,20.5vw,360px)/.78 var(--sans);margin:0 0 clamp(48px,6vw,96px);color:var(--plaster)}
-.foot{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2rem 4rem;align-items:end;border-top:1px solid var(--hair-d);padding-top:2.4rem}
-.foot .kk{font-size:1.6rem;color:var(--lamp)}
-.foot-r{display:grid;gap:1rem;justify-items:end;text-align:right}
+/* closing: the sign */
+.close{position:relative;z-index:2;background:#0D0C0A;padding-block:var(--sec) 0;text-align:center}
+.close .kk{font-size:1.8rem;color:var(--lamp)}
+.sign{width:min(84vw,520px);aspect-ratio:1;margin:2.8rem auto 0}
+.close .tag{margin:2.8rem 0 0;font:400 .74rem/2.2 var(--sans);letter-spacing:.44em;text-transform:uppercase;color:var(--soft-d)}
+footer{margin-top:var(--sec);border-top:1px solid var(--hair-d);padding-block:48px calc(48px + env(safe-area-inset-bottom,0px));text-align:left}
+.foot{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2rem 4rem;align-items:end}
+.foot-word{font:300 clamp(3rem,8vw,7rem)/.8 var(--sans);letter-spacing:.08em}
+.foot-r{display:grid;gap:1.2rem;justify-items:end;text-align:right}
 .foot-r nav{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;justify-content:flex-end}
-.foot-r nav a{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--soft-d)}
-.foot-r p{margin:0;font-size:.82rem;color:var(--stone);max-width:64ch}
-@media (max-width:959px){.foot{grid-template-columns:1fr}.foot-r{justify-items:start;text-align:left}.foot-r nav{justify-content:flex-start}footer{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}}
+.foot-r nav a{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--soft-d)}
+.foot-r p{margin:0;font-size:.82rem;color:var(--stone);max-width:60ch}
+@media (max-width:959px){.foot{grid-template-columns:1fr}.foot-r{justify-items:start;text-align:left}.foot-r nav{justify-content:flex-start}footer{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 </style>
@@ -452,7 +404,7 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
       <li><a href="#interior">Interior</a></li>
       <li><a href="#dishes">Dishes</a></li>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#gallery">After dark</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#location">Visit</a></li>
     </ul>
     <a class="btn" href="#reserve">Reserve a Table</a>
@@ -465,7 +417,7 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
     <li><a href="#interior"><small>02</small>Interior</a></li>
     <li><a href="#dishes"><small>03</small>Dishes</a></li>
     <li><a href="#menu"><small>04</small>Menu</a></li>
-    <li><a href="#gallery"><small>05</small>After dark</a></li>
+    <li><a href="#gallery"><small>05</small>Gallery</a></li>
     <li><a href="#location"><small>06</small>Visit</a></li>
   </ol>
   <div class="sheet-foot">
@@ -477,11 +429,11 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
 <a class="btn pill" id="pill" href="#reserve">Reserve a Table</a>
 
 <main>
-<!-- 01 ARRIVE -->
 <section class="hero" id="top" data-chapter="01|Arrive">
   <figure class="hero-arch" id="heroArch">
-    <div class="hero-arch-in"><img src="img/entrance.webp" srcset="img/entrance-m.webp 520w, img/entrance.webp 765w" sizes="(max-width:759px) 78vw, 44vw" alt="The KOKOY entrance at night: a lit cobbled path, palm trees and the illuminated KOKOY Restaurant – Patisserie sign" width="765" height="1020" fetchpriority="high" decoding="async"></div>
+    <div class="hero-arch-in"><img src="img/entrance.webp" alt="The KOKOY entrance at night: a lit cobbled path, palm trees and the illuminated KOKOY Restaurant – Patisserie sign" width="765" height="1020" fetchpriority="high" decoding="async"></div>
   </figure>
+  <div class="hero-veil"></div>
   <div class="hero-copy">
     <span class="label">Restaurant — Patisserie</span>
     <h1 class="d">Arrive by evening, <em>stay for dessert.</em></h1>
@@ -501,147 +453,118 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
   </div>
 </section>
 
-<!-- 02 ENTER -->
-<section class="exp lt" id="experience" data-chapter="02|Enter">
+<section class="exp light" id="experience" data-chapter="02|Enter">
   <div class="wrap">
-    <span class="label">The house</span>
-    <p class="d exp-state" id="expState">Arched rooms in warm plaster, sculpture on the walls and low light over every table. A menu that runs from the main course <em>to patisserie.</em></p>
+    <div class="exp-top">
+      <span class="label">The house</span>
+      <p class="d exp-state" id="expState">Arched rooms in warm plaster, sculpture on the walls and low light over every table. A menu that runs from the main course <em>to patisserie.</em></p>
+    </div>
     <div class="exp-comp">
       <div class="exp-main ph" data-par><img src="img/lounge.webp" alt="The KOKOY lounge: cream armchairs under framed relief art, each lit by its own spotlight" loading="lazy" decoding="async" width="729" height="732"></div>
-      <div class="exp-sub ph"><img src="img/sculpture.webp" alt="A gold-leaf ribbon sculpture in the KOKOY dining room, the glass garden glowing behind" loading="lazy" decoding="async" width="574" height="1020"></div>
+      <div class="exp-sub ph"><img src="img/sculpture.webp" alt="A gold-leaf ribbon sculpture in the KOKOY dining room" loading="lazy" decoding="async" width="574" height="1020" style="object-position:30% 82%"></div>
       <div class="exp-text">
-        <p class="exp-lede">KOKOY is a restaurant and patisserie in Gulgasht Colony, Multan. Come for dinner, stay for dessert, or settle into the lounge with something cold to drink.</p>
-        <ol class="notes">
-          <li><h3>The room</h3><p>Arched windows, sculpted plaster and lamps set low over dark tables.</p></li>
-          <li><h3>The plate</h3><p>Blistered-crust pizza, crisp prawns, salmon and pasta.</p></li>
-          <li><h3>The pastry</h3><p>Patisserie is half of the name. Leave room for cheesecake.</p></li>
-        </ol>
+        <p class="lede dim-l">KOKOY is a restaurant and patisserie in Gulgasht Colony, Multan. Come for dinner, stay for dessert, or settle into the lounge with something cold to drink.</p>
+        <div class="notes">
+          <div><h3>The room</h3><p>Arched windows, sculpted plaster and lamps set low over dark tables.</p></div>
+          <div><h3>The plate</h3><p>Blistered-crust pizza, crisp prawns, salmon and pasta.</p></div>
+          <div><h3>The pastry</h3><p>Patisserie is half of the name. Leave room for cheesecake.</p></div>
+          <div><h3>The welcome</h3><p>Deep lounge chairs and garden views through the glass.</p></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 03 INTERIOR -->
-<section class="rooms lt" id="interior" data-chapter="03|Interior">
-  <div class="wrap rooms-head"><span class="label">Interior</span><h2 class="d l1">A walk <em>through the rooms</em></h2></div>
-  <div class="rooms-list">
-    <article class="room">
-      <figure class="room-ph" style="--ar-m:3/4"><div class="pi"><img src="img/hall.webp" alt="The double-height KOKOY dining hall: cream armchairs, a glass garden of palms and a ring of light hanging from the dark ceiling" loading="lazy" decoding="async" width="768" height="1020" style="object-position:50% 50%"></div></figure>
-      <div class="room-txt">
-        <span class="room-n" aria-hidden="true">01</span>
-        <span class="label">The dining hall</span>
-        <h3 class="d l2">A garden <em>behind glass</em></h3>
-        <p>A double-height room in warm plaster, cream armchairs at dark tables, palms growing inside a glass court and a ring of light overhead.</p>
-      </div>
-    </article>
-    <article class="room">
-      <figure class="room-ph" style="--ar-m:4/5"><div class="pi"><img src="img/wall-art.webp" alt="A sculpted relief artwork on a plaster wall under a single spotlight, the dining room and garden beyond" loading="lazy" decoding="async" width="729" height="915" style="object-position:62% 50%"></div></figure>
-      <div class="room-txt">
-        <span class="room-n" aria-hidden="true">02</span>
-        <span class="label">Gallery walls</span>
-        <h3 class="d l2">Art <em>under its own light</em></h3>
-        <p>Relief artworks in plaster tones line the dining room, each under a single spotlight, with the garden glowing through the glass.</p>
-      </div>
-    </article>
-    <article class="room">
-      <figure class="room-ph" style="--ar-m:4/5"><div class="pi"><img src="img/gold-wall.webp" alt="A wall artwork of gold-leaf blocks above a live-edge wooden shelf" loading="lazy" decoding="async" width="729" height="1218" style="object-position:50% 40%"></div></figure>
-      <div class="room-txt">
-        <span class="room-n" aria-hidden="true">03</span>
-        <span class="label">Gold leaf</span>
-        <h3 class="d l2">A wall <em>of gilded blocks</em></h3>
-        <p>Gold leaf on white plaster, above a live-edge shelf in dark wood.</p>
-      </div>
-    </article>
-    <article class="room">
-      <figure class="room-ph win"><div class="awin"><div class="pi"><img src="img/overhead.webp" alt="The KOKOY salon seen from the level above: cream lounge chairs, dark tables and bronze pendant lights" loading="lazy" decoding="async" width="459" height="1020"></div></div></figure>
-      <div class="room-txt">
-        <span class="room-n" aria-hidden="true">04</span>
-        <span class="label">The salon</span>
-        <h3 class="d l2">Seen from <em>the gallery level</em></h3>
-        <p>Cream lounge chairs around dark tables, with a cascade of bronze light hanging overhead.</p>
-      </div>
-    </article>
+<section class="story light" id="interior" data-chapter="03|Interior">
+  <div class="wrap">
+    <div class="frames">
+      <article class="frame">
+        <div class="f-cap"><span class="num">01 / 03</span><span class="label">The dining hall</span><h3 class="d l2">A garden <em>behind glass</em></h3><p>A double-height room in warm plaster: cream armchairs at dark tables, palms growing inside a glass court and a ring of light overhead.</p></div>
+        <div class="f-art">
+          <div class="f-main ph" style="--h:min(86vh,900px);--ar:768/1020;--ar-m:4/5"><img src="img/hall.webp" alt="The double-height KOKOY dining hall: cream armchairs, a glass garden of palms and a ring of light hanging from the dark ceiling" loading="lazy" decoding="async" width="768" height="1020"></div>
+          <div class="f-sub ph"><img src="img/sculpture-table.webp" alt="A gold sculpture and a table set with blue glasses" loading="lazy" decoding="async" width="729" height="732"></div>
+        </div>
+      </article>
+      <article class="frame">
+        <div class="f-cap"><span class="num">02 / 03</span><span class="label">Gold leaf</span><h3 class="d l2">A wall <em>of gilded blocks</em></h3><p>Gold leaf on white plaster above a live-edge shelf in dark wood.</p></div>
+        <div class="f-art">
+          <div class="f-main ph" style="--h:min(86vh,900px);--ar:243/406;--ar-m:243/406"><img src="img/gold-wall.webp" alt="A wall artwork of gold-leaf blocks above a live-edge wooden shelf" loading="lazy" decoding="async" width="729" height="1218"></div>
+          <div class="f-sub ph"><img src="img/lounge.webp" alt="The lounge with framed relief art" loading="lazy" decoding="async" width="729" height="732"></div>
+        </div>
+      </article>
+      <article class="frame">
+        <div class="f-cap"><span class="num">03 / 03</span><span class="label">Gallery walls</span><h3 class="d l2">Art <em>under its own light</em></h3><p>Relief artworks in plaster tones line the dining room, each under a single spotlight.</p></div>
+        <div class="f-art">
+          <div class="f-main ph" style="--h:min(84vh,820px);--ar:243/305;--ar-m:243/305"><img src="img/wall-art.webp" alt="A sculpted relief artwork on a plaster wall, with the dining room beyond" loading="lazy" decoding="async" width="729" height="915"></div>
+        </div>
+      </article>
+    </div>
   </div>
-  <div class="rooms-rail" aria-hidden="true"><span id="roomNo">01</span><i><b id="roomBar"></b></i><span>04</span></div>
+  <div class="story-rail" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
 </section>
 
 <div class="door" data-chapter="04|The food">
   <div class="door-dark" id="door">
     <span class="label">From the kitchen</span>
     <h2 class="d xl">Discover <em>the food</em></h2>
-    <p>Plates from KOKOY, photographed at the table.</p>
+    <p>Four plates from KOKOY, photographed at the table.</p>
   </div>
 </div>
-
-<!-- 04 SIGNATURE DISHES -->
 <section class="dishes" id="dishes" data-chapter="04|The food">
   <div class="dish-list">
     <article class="dish">
-      <div class="dish-l">
-        <span class="mask"><span class="num">01 — Pizza</span></span>
-        <span class="mask"><h3 class="d">Pesto<br><em>Pizza</em></h3></span>
-      </div>
-      <figure class="dish-ph"><div class="pi"><img src="img/pizza-pesto.webp" alt="A pizza with a charred, blistered crust topped with green pesto, chicken, cherry tomatoes and basil" loading="lazy" decoding="async" width="729" height="1218" style="--z:1.3;--o:52% 52%"></div></figure>
-      <div class="dish-r">
-        <span class="mask"><p>A blistered, charred-edge crust under green pesto, tender chicken, cherry tomatoes and torn basil.</p></span>
-        <dl class="on-plate"><dt>On the plate</dt><dd>Pesto · Chicken · Cherry tomato · Basil</dd></dl>
-        <div class="price">Rs —<small>Price from KOKOY menu</small></div>
-      </div>
-    </article>
-    <article class="dish">
-      <div class="dish-l">
-        <span class="mask"><span class="num">02 — Plates</span></span>
-        <span class="mask"><h3 class="d long">Crumbed Chicken,<br><em>Pesto Pasta</em></h3></span>
-      </div>
-      <figure class="dish-ph"><div class="pi"><img src="img/chicken-pesto.webp" alt="A crumbed chicken fillet on tomato sauce, topped with pesto fusilli, a spoon of cream and thyme" loading="lazy" decoding="async" width="768" height="1020" style="object-position:50% 55%"></div></figure>
-      <div class="dish-r">
-        <span class="mask"><p>A golden crumbed fillet on a pool of tomato sauce, crowned with pesto fusilli, a spoon of cream and a sprig of thyme.</p></span>
-        <dl class="on-plate"><dt>On the plate</dt><dd>Crumbed chicken · Tomato sauce · Pesto fusilli · Cream</dd></dl>
-        <div class="price">Rs —<small>Price from KOKOY menu</small></div>
+      <div class="wrap dish-in">
+        <div class="dish-ph ph" style="--h:min(86vh,900px);--ar:18/25;--ar-m:4/5"><img src="img/pizza-pesto.webp" alt="A pizza with a charred, blistered crust topped with green pesto, chicken, cherry tomatoes and basil" loading="lazy" decoding="async" width="729" height="1218" style="object-position:50% 34%"></div>
+        <div class="dish-text">
+          <span class="mask"><span class="num dish-idx">01 — Pizza</span></span>
+          <span class="mask t"><h3 class="d">Pesto <em>Pizza</em></h3></span>
+          <span class="mask"><p>A blistered, charred-edge crust under green pesto, tender chicken, cherry tomatoes and torn basil.</p></span>
+          <dl class="on-plate"><dt>On the plate</dt><dd>Pesto · Chicken · Cherry tomato · Basil · Mozzarella</dd></dl>
+          <div class="price">Rs —<small>Price from KOKOY menu</small></div>
+        </div>
       </div>
     </article>
     <article class="dish">
-      <div class="dish-l">
-        <span class="mask"><span class="num">03 — Grill</span></span>
-        <span class="mask"><h3 class="d">Grilled<br><em>Chicken</em></h3></span>
-      </div>
-      <figure class="dish-ph"><div class="pi"><img src="img/grilled-chicken.webp" alt="Grilled chicken breasts with a cherry tomato, rice under crisp potato straws, glazed vegetables and two sauces, seen from above" loading="lazy" decoding="async" width="1017" height="1020" style="object-position:62% 50%"></div></figure>
-      <div class="dish-r">
-        <span class="mask"><p>Char-lined chicken breast beside rice under crisp potato straws, glazed carrots and beans, with two sauces on the side.</p></span>
-        <dl class="on-plate"><dt>On the plate</dt><dd>Grilled chicken · Rice · Vegetables · Two sauces</dd></dl>
-        <div class="price">Rs —<small>Price from KOKOY menu</small></div>
+      <div class="wrap dish-in">
+        <div class="dish-ph ph" style="--h:min(86vh,900px);--ar:768/1020;--ar-m:4/5"><img src="img/chicken-pesto.webp" alt="A crumbed chicken fillet on tomato sauce, topped with pesto fusilli, a spoon of cream and thyme" loading="lazy" decoding="async" width="768" height="1020" style="object-position:50% 55%"></div>
+        <div class="dish-text">
+          <span class="mask"><span class="num dish-idx">02 — Plates</span></span>
+          <span class="mask t"><h3 class="d">Crumbed Chicken, <em>Pesto Pasta</em></h3></span>
+          <span class="mask"><p>A golden crumbed fillet on a pool of tomato sauce, crowned with pesto fusilli, a spoon of cream and a sprig of thyme.</p></span>
+          <dl class="on-plate"><dt>On the plate</dt><dd>Crumbed chicken · Tomato sauce · Pesto fusilli · Cream</dd></dl>
+          <div class="price">Rs —<small>Price from KOKOY menu</small></div>
+        </div>
       </div>
     </article>
     <article class="dish">
-      <div class="dish-l">
-        <span class="mask"><span class="num">04 — To share</span></span>
-        <span class="mask"><h3 class="d">The<br><em>Table</em></h3></span>
+      <div class="wrap dish-in">
+        <div class="dish-ph ph" style="--h:min(86vh,900px);--ar:574/1020;--ar-m:4/5"><img src="img/table-top.webp" alt="A KOKOY table from above: a white pizza with chicken and basil, crumbed chicken under pesto fusilli, and chicken with rice and a cream sauce" loading="lazy" decoding="async" width="574" height="1020"></div>
+        <div class="dish-text">
+          <span class="mask"><span class="num dish-idx">03 — To share</span></span>
+          <span class="mask t"><h3 class="d">The <em>Table</em></h3></span>
+          <span class="mask"><p>A white pizza, crumbed chicken under pesto fusilli, and chicken with rice in a cream sauce. Order a few plates and pass them around.</p></span>
+          <dl class="on-plate"><dt>On the table</dt><dd>White pizza · Pesto fusilli · Chicken and rice</dd></dl>
+          <div class="price">Rs —<small>Prices from KOKOY menu</small></div>
+        </div>
       </div>
-      <figure class="dish-ph"><div class="pi"><img src="img/table-top.webp" alt="A KOKOY table from above: a white pizza with chicken and basil, crumbed chicken under pesto fusilli, and chicken with rice and a cream sauce" loading="lazy" decoding="async" width="574" height="1020" style="object-position:50% 50%"></div></figure>
-      <div class="dish-r">
-        <span class="mask"><p>A white pizza, crumbed chicken under pesto fusilli, and chicken with rice in a cream sauce. Order a few plates and pass them around.</p></span>
-        <dl class="on-plate"><dt>On the table</dt><dd>White pizza · Pesto fusilli · Chicken and rice</dd></dl>
-        <div class="price">Rs —<small>Prices from KOKOY menu</small></div>
+    </article>
+    <article class="dish">
+      <div class="wrap dish-in">
+        <div class="dish-ph ph" style="--h:min(62vh,520px);--ar:243/174;--ar-m:243/174"><img src="img/prawns.webp" alt="Crisp golden prawns on shredded lettuce and dill, on a white crescent plate" loading="lazy" decoding="async" width="729" height="522"></div>
+        <div class="dish-text">
+          <span class="mask"><span class="num dish-idx">04 — Small plates</span></span>
+          <span class="mask t"><h3 class="d">Golden <em>Prawns</em></h3></span>
+          <span class="mask"><p>Crisp, golden prawns over shredded lettuce and fresh dill, served on a crescent plate.</p></span>
+          <dl class="on-plate"><dt>On the plate</dt><dd>Prawns · Lettuce · Dill</dd></dl>
+          <div class="price">Rs —<small>Price from KOKOY menu</small></div>
+        </div>
       </div>
     </article>
   </div>
   <div class="dish-rail" aria-hidden="true"><span class="on">01</span><span>02</span><span>03</span><span>04</span></div>
 </section>
 
-<section class="plates" aria-label="Plates to share">
-  <div class="wrap plates-grid">
-    <figure class="pl-big ph" data-par><img src="img/spread.webp" alt="A table of shared plates: fish and chips, grilled chicken with vegetables, crispy rolls and a white pizza" loading="lazy" decoding="async" width="729" height="522"></figure>
-    <div class="pl-txt">
-      <span class="label">Small plates</span>
-      <h2 class="d l1">Plates <em>to share</em></h2>
-      <p>Fish and chips, grilled chicken with vegetables, crispy rolls and a white pizza, all set down at once.</p>
-    </div>
-    <figure class="pl-small"><div class="ph"><img src="img/prawns.webp" alt="Crisp golden prawns on shredded lettuce and dill, on a white crescent plate" loading="lazy" decoding="async" width="729" height="522"></div><figcaption><b>04</b>Golden prawns, lettuce and dill</figcaption></figure>
-  </div>
-</section>
-
-<!-- 05 MENU -->
-<section class="menu lt" id="menu" data-chapter="05|The menu">
+<section class="menu light" id="menu" data-chapter="05|The menu">
   <div class="wrap menu-grid">
     <div class="menu-left">
       <span class="label">Menu</span>
@@ -650,7 +573,7 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
       <p>A first selection built from KOKOY's own photographs. Names describe each dish; menu names and prices come from KOKOY.</p>
     </div>
     <div class="panel" role="tabpanel" id="panel" aria-labelledby="tab-0">
-      <div class="panel-head"><h3 class="d" id="panelTitle">Pizza</h3><span class="num" id="panelCount">02 dishes</span></div>
+      <div class="panel-head"><h3 class="d" id="panelTitle">Pizza</h3><span class="num dim-l" id="panelCount">02 dishes</span></div>
       <ul class="items" id="items"></ul>
       <p class="menu-foot">Prices show as Rs — until confirmed by KOKOY.</p>
     </div>
@@ -658,69 +581,64 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
   </div>
 </section>
 
-<section class="sugar lt" id="patisserie" data-chapter="05|Patisserie">
-  <figure class="sugar-ph ph" data-par><img src="img/cheesecake.webp" alt="A slice of baked cheesecake with a swirl of red berry coulis, the KOKOY dining room and glass garden behind" loading="lazy" decoding="async" width="729" height="1218"><figcaption>Baked cheesecake, berry coulis</figcaption></figure>
+<section class="sugar" id="patisserie" data-chapter="05|The menu">
   <p class="pat-word" id="patWord" aria-hidden="true">Patisserie</p>
-  <div class="pat-text">
-    <span class="label">Patisserie</span>
-    <h3 class="d l2">The second word <em>on the sign</em></h3>
-    <p>KOKOY reads Restaurant — Patisserie. End the evening with a slice of baked cheesecake and a bright stroke of berry coulis.</p>
-    <div class="price">Rs —<small>Price from KOKOY menu</small></div>
-  </div>
-</section>
-
-<section class="drinks" id="drinks" data-chapter="05|Drinks">
-  <div class="wrap">
-    <div class="drinks-head">
-      <div><span class="label">Drinks</span><h2 class="d l1" style="margin-top:1.4rem">Something <em>cold</em></h2></div>
-    </div>
-    <div class="drinks-stage">
-      <div class="dn dn-l"><div><span class="num">01</span><b>Blue coconut <em>shake</em></b><small>Coconut-rimmed glass, a cherry and a black straw.</small></div><i class="ln"></i></div>
-      <div class="drink-ph ph"><img src="img/drinks.webp" alt="A blue coconut shake and an iced tea with lemon and mint, side by side" loading="lazy" decoding="async" width="729" height="1218"></div>
-      <div class="dn dn-r"><i class="ln"></i><div><span class="num">02</span><b>Iced tea, <em>lemon and mint</em></b><small>Amber, cold and bright with citrus.</small></div></div>
-    </div>
-    <div class="coffee">
-      <figure class="cf-big"><div class="ph" data-par><img src="img/latte.webp" alt="A coffee with a heart poured in the foam, in a speckled cup on a dark table" loading="lazy" decoding="async" width="1360" height="765"></div><figcaption><b>03</b>A heart in the foam</figcaption></figure>
-      <div class="cf-txt"><span class="label">Coffee</span><h3 class="d l2">Hot, or <em>to go</em></h3><p>Coffee at the table with a heart in the foam, or iced in a KOKOY cup to carry out.</p></div>
-      <figure class="cf-cup"><div class="ph"><img src="img/iced-coffee.webp" alt="Two iced coffees in KOKOY-branded cups beside a KOKOY menu tied with ribbon" loading="lazy" decoding="async" width="574" height="1020"></div><figcaption><b>04</b>Iced, in a KOKOY cup</figcaption></figure>
+  <div class="wrap pat-grid">
+    <div class="pat-arch ph arch" data-par><img src="img/cheesecake.webp" alt="A slice of baked cheesecake with a swirl of red berry coulis, in the KOKOY dining room" loading="lazy" decoding="async" width="729" height="1218"></div>
+    <div class="pat-close ph" id="patClose"><img src="img/cheesecake.webp" alt="" loading="lazy" decoding="async" width="729" height="1218"></div>
+    <p class="pat-cap">Baked cheesecake, berry coulis</p>
+    <div class="pat-text">
+      <span class="label">Patisserie</span>
+      <h3 class="d">The second word <em>on the sign</em></h3>
+      <p>KOKOY reads Restaurant — Patisserie. End the evening with a slice of baked cheesecake and a bright stroke of berry coulis.</p>
+      <div class="price">Rs —<small>Price from KOKOY menu</small></div>
     </div>
   </div>
 </section>
 
-<!-- 06 AFTER DARK -->
-<section class="gallery" id="gallery" data-chapter="06|After dark">
-  <div class="track" id="track" tabindex="0" aria-label="After dark, scroll sideways">
-    <div class="g-head">
-      <span class="label">The evening</span>
-      <h2 class="d xl">After <em>dark</em></h2>
-      <p>The arches light up along Bosan Road and the garden path glows under the palms.</p>
-    </div>
-    <figure class="shot s-up"><div class="ph" style="--mh:760px;--ar:1"><div class="pi"><img src="img/exterior.webp" alt="KOKOY's lit arched facade at night on Bosan Road" loading="lazy" decoding="async" width="729" height="732"></div></div><figcaption><b>01</b>Bosan Road, after dark</figcaption></figure>
-    <figure class="shot s-dn"><div class="ph" style="--mh:740px;--ar:3/4"><div class="pi"><img src="img/entrance.webp" alt="The garden path at the KOKOY entrance: a palm, a wicker chair and the lit sign" loading="lazy" decoding="async" width="765" height="1020" style="--z:1.32;--o:72% 78%"></div></div><figcaption><b>02</b>The garden path</figcaption></figure>
-    <figure class="shot s-up"><div class="ph" style="--mh:640px;--ar:729/609"><div class="pi"><img src="img/facade.webp" alt="The KOKOY building with tall arches and the KOKOY name" loading="lazy" decoding="async" width="729" height="609"></div></div><figcaption><b>03</b>The arches</figcaption></figure>
-  </div>
-</section>
-
-<section class="stay" id="stay" aria-label="An evening at KOKOY" data-chapter="06|After dark">
-  <div class="stay-in">
-    <p class="stay-word sw-l" aria-hidden="true">Stay</p>
-    <div class="stay-win ph"><img src="img/sign.webp" alt="The illuminated KOKOY Restaurant – Patisserie sign at night" loading="lazy" decoding="async" width="729" height="732"></div>
-    <p class="stay-word sw-r" aria-hidden="true"><em>a while</em></p>
-    <div class="stay-cta">
-      <span class="label">An evening at KOKOY</span>
-      <a class="btn" href="#reserve">Reserve a Table</a>
+<section class="drinks" id="drinks" data-chapter="05|The menu">
+  <div class="wrap drinks-grid">
+    <div class="drink-ph ph" data-par><img src="img/drinks.webp" alt="A blue coconut shake and an iced tea with lemon and mint, side by side" loading="lazy" decoding="async" width="729" height="1218"></div>
+    <div class="drinks-txt">
+      <span class="label">Drinks</span>
+      <h2 class="d l1">Something <em>cold</em></h2>
+      <div class="drink"><span class="num">01</span><b>Blue coconut shake</b><span>Coconut-rimmed glass, a cherry and a black straw.</span></div>
+      <div class="drink"><span class="num">02</span><b>Iced tea, <em>lemon and mint</em></b><span>Amber, cold and bright with citrus.</span></div>
     </div>
   </div>
 </section>
 
-<!-- 07 RESERVE -->
+<section class="gallery" id="gallery" data-chapter="06|The evening">
+  <div class="wrap gal-head">
+    <h2 class="d xl">After <em>dark</em></h2>
+    <p>The arches light up along Bosan Road and the dining room settles into lamplight.</p>
+  </div>
+  <div class="track" id="track" tabindex="0" aria-label="Gallery, scroll sideways">
+    <figure class="shot"><div class="ph" style="--h:min(62vh,530px);--ar:1"><img src="img/exterior.webp" alt="KOKOY's lit arched facade at night on Bosan Road" loading="lazy" decoding="async" width="729" height="732"></div><figcaption><b>01</b>Bosan Road, after dark</figcaption></figure>
+    <figure class="shot dn" style="--dn:12vh"><div class="ph" style="--h:min(66vh,620px);--ar:243/305"><img src="img/wall-art.webp" alt="Relief art in the dining room" loading="lazy" decoding="async" width="729" height="915"></div><figcaption><b>02</b>Plaster and light</figcaption></figure>
+    <figure class="shot"><div class="ph" style="--h:min(44vh,380px);--ar:243/174"><img src="img/spread.webp" alt="A table of shared plates: fish and chips, grilled chicken, crispy rolls and pizza" loading="lazy" decoding="async" width="729" height="522"></div><figcaption><b>03</b>Plates to share</figcaption></figure>
+    <figure class="shot dn" style="--dn:6vh"><div class="ph" style="--h:min(72vh,760px);--ar:459/1020"><img src="img/overhead.webp" alt="The salon from above in warm lamplight" loading="lazy" decoding="async" width="459" height="1020"></div><figcaption><b>04</b>Lamplight</figcaption></figure>
+    <figure class="shot"><div class="ph" style="--h:min(54vh,445px);--ar:243/203"><img src="img/facade.webp" alt="The KOKOY building with tall arches and the KOKOY name" loading="lazy" decoding="async" width="729" height="609"></div><figcaption><b>05</b>The arches</figcaption></figure>
+    <figure class="shot dn" style="--dn:16vh"><div class="ph" style="--h:min(50vh,520px);--ar:1"><img src="img/sculpture-table.webp" alt="A gold sculpture beside a table set with blue glasses" loading="lazy" decoding="async" width="729" height="732"></div><figcaption><b>06</b>Gold and glass</figcaption></figure>
+  </div>
+</section>
+
+<section class="atmo" aria-label="An evening at KOKOY" data-chapter="06|The evening">
+  <div class="ph"><img src="img/entrance.webp" alt="The KOKOY entrance at night, palms and the lit sign above a cobbled path" loading="lazy" decoding="async" width="765" height="1020"></div>
+  <div class="atmo-txt">
+    <span class="label">An evening at KOKOY</span>
+    <p class="d">Stay <em>a while</em></p>
+    <a class="btn" href="#reserve">Reserve a Table</a>
+  </div>
+</section>
+
 <section class="reserve" id="reserve" data-chapter="07|Reserve">
   <div class="wrap res-grid">
     <div class="res-intro">
       <span class="label">Reservations</span>
       <h2 class="d l1">Reserve <em>a table</em></h2>
       <p>Choose a date, a time and your party size. Add anything we should know in the note.</p>
-      <div class="res-arch ph arch"><img src="img/sculpture.webp" alt="" loading="lazy" decoding="async" width="574" height="1020"></div>
+      <div class="res-arch ph arch"><img src="img/exterior.webp" alt="" loading="lazy" decoding="async" width="729" height="732"></div>
     </div>
     <div>
       <form id="resForm" novalidate>
@@ -744,55 +662,62 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
   </div>
 </section>
 
-<!-- VISIT -->
-<section class="loc lt" id="location" data-chapter="07|Visit">
-  <div class="wrap">
-    <span class="label">Visit</span>
-    <h2 class="d loc-addr"><span id="addr">1A/C Bosan Road</span><br><em>Gulgasht Colony, Multan</em></h2>
-    <div class="loc-row">
-      <div><dt>Address</dt><dd>1A/C Bosan Road, A Block, Gulgasht Colony, Multan<button class="copy" type="button" id="copyAddr">Copy</button></dd></div>
-      <div><dt>Phone</dt><dd><a href="tel:+923257845555" style="text-decoration:none">+92 325 7845555</a></dd></div>
-      <div><dt>Hours</dt><dd><em>To be confirmed by KOKOY</em></dd></div>
+<section class="loc" id="location" data-chapter="07|Reserve">
+  <div class="wrap loc-grid">
+    <div>
+      <span class="label">Visit</span>
+      <h2 class="d l1">Find the arches <em>on Bosan Road</em></h2>
+      <dl class="facts">
+        <div><dt>Address</dt><dd><span id="addr">1A/C Bosan Road, A Block, Gulgasht Colony, Multan</span><button class="copy" type="button" id="copyAddr">Copy</button></dd></div>
+        <div><dt>Hours</dt><dd><em>To be confirmed by KOKOY</em></dd></div>
+        <div><dt>Contact</dt><dd><em>Phone and email to be confirmed by KOKOY</em></dd></div>
+      </dl>
       <div class="loc-cta">
         <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=KOKOY%201A%2FC%20Bosan%20Road%20Gulgasht%20Colony%20Multan" target="_blank" rel="noopener">Get directions</a>
         <a class="link" href="#reserve">Reserve a Table</a>
       </div>
     </div>
+    <a class="mapcard ph" href="https://www.google.com/maps/search/?api=1&amp;query=KOKOY%201A%2FC%20Bosan%20Road%20Gulgasht%20Colony%20Multan" target="_blank" rel="noopener" aria-label="Open KOKOY in Google Maps">
+      <img src="img/facade.webp" alt="The KOKOY building with its tall arches" loading="lazy" decoding="async" width="729" height="609">
+      <span>Look for the tall arches and the KOKOY name.<b>Open map ↗</b></span>
+    </a>
+  </div>
+</section>
+
+<section class="close" aria-label="KOKOY">
+  <div class="wrap">
+    <span class="kk" aria-hidden="true"><span>K</span><span>K</span></span>
+    <div class="sign ph" id="sign"><img src="img/sign.webp" alt="The illuminated KOKOY Restaurant – Patisserie sign" loading="lazy" decoding="async" width="729" height="732"></div>
+    <p class="tag">Restaurant — Patisserie · Multan</p>
+    <footer>
+      <div class="foot">
+        <div class="foot-word">KOKOY</div>
+        <div class="foot-r">
+          <nav aria-label="Footer"><a href="#experience">Experience</a><a href="#dishes">Dishes</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reserve">Reserve</a></nav>
+          <p>1A/C Bosan Road, A Block, Gulgasht Colony, Multan</p>
+          <p>Website concept. Photography: KOKOY. Dish names describe the photographs; menu names, prices, hours and contact details to be supplied by KOKOY.</p>
+        </div>
+      </div>
+    </footer>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p class="foot-word" aria-hidden="true"><span>K</span><span>O</span><span>K</span><span>O</span><span>Y</span></p>
-    <div class="foot">
-      <span class="kk" aria-hidden="true"><span>K</span><span>K</span></span>
-      <div class="foot-r">
-        <nav aria-label="Footer"><a href="#experience">Experience</a><a href="#dishes">Dishes</a><a href="#menu">Menu</a><a href="#gallery">After dark</a><a href="#reserve">Reserve</a></nav>
-        <p>Restaurant — Patisserie · 1A/C Bosan Road, A Block, Gulgasht Colony, Multan</p>
-        <p>Website concept. Photography: KOKOY. Dish names describe the photographs; menu names, prices and hours to be supplied by KOKOY.</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
 "use strict";
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pad=n=>String(n).padStart(2,'0');
-let lenis=null;
 
 /* nav, sheet, pill */
 const nav=$('#nav'), pill=$('#pill'), burger=$('#burger'), sheet=$('#sheet');
-let resVisible=false,stayVisible=false;
-function onScroll(){const y=scrollY,h=innerHeight;nav.classList.toggle('is-solid',y>h*.55||document.documentElement.classList.contains('menu-open'));pill.classList.toggle('on',y>h*1.2&&!resVisible&&!stayVisible)}
+let resVisible=false,atmoVisible=false;
+function onScroll(){const y=scrollY,h=innerHeight;nav.classList.toggle('is-solid',y>h*.55||document.documentElement.classList.contains('menu-open'));pill.classList.toggle('on',y>h*1.2&&!resVisible&&!atmoVisible)}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
-function setMenu(open){document.documentElement.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');sheet.setAttribute('aria-hidden',!open);document.body.style.overflow=open?'hidden':'';lenis&&(open?lenis.stop():lenis.start());onScroll()}
+function setMenu(open){document.documentElement.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');sheet.setAttribute('aria-hidden',!open);document.body.style.overflow=open?'hidden':'';onScroll()}
 burger.addEventListener('click',()=>setMenu(!document.documentElement.classList.contains('menu-open')));
 $$('.sheet a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
@@ -802,23 +727,23 @@ const chap=$('#chapter');
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const[n,t]=e.target.dataset.chapter.split('|');chap.innerHTML='<b>'+n+'</b><span>'+t+'</span>'}})},{rootMargin:'-50% 0px -50% 0px'});
 $$('[data-chapter]').forEach(s=>io.observe(s));
 new IntersectionObserver(es=>{es.forEach(e=>{resVisible=e.isIntersecting});onScroll()}).observe($('#reserve'));
-new IntersectionObserver(es=>{es.forEach(e=>{stayVisible=e.isIntersecting});onScroll()}).observe($('.stay-cta'));
+new IntersectionObserver(es=>{es.forEach(e=>{atmoVisible=e.isIntersecting});onScroll()}).observe($('.atmo-txt'));
 
-/* menu — names describe KOKOY's photos */
-const P={pizza:{src:'pizza-pesto',pos:'50% 56%'},chicken:{src:'chicken-pesto',pos:'50% 55%'},grilled:{src:'grilled-chicken',pos:'62% 50%'},table:{src:'table-top',pos:'50% 50%'},latte:{src:'latte',pos:'45% 50%'},iced:{src:'iced-coffee',pos:'50% 40%'},salmon:{src:'salmon-table',pos:'46% 50%'},spread:{src:'spread',pos:'72% 60%'},prawns:{src:'prawns',pos:'38% 55%'},cake:{src:'cheesecake',pos:'50% 72%'},drinks:{src:'drinks',pos:'50% 50%'},bread:{src:'sculpture-table',pos:'80% 90%'}};
+/* menu — names describe KOKOY's photos; img only where a full photo exists */
+const P={pizza:{src:'pizza-pesto',pos:'50% 56%'},chicken:{src:'chicken-pesto',pos:'50% 55%'},grilled:{src:'grilled-chicken',pos:'62% 50%'},table:{src:'table-top',pos:'50% 50%'},salmon:{src:'salmon-table',pos:'50% 50%'},spread:{src:'spread',print:1},prawns:{src:'prawns',print:1},cake:{src:'cheesecake',pos:'50% 72%'},drinks:{src:'drinks',pos:'50% 50%'},bread:{src:'sculpture-table',pos:'60% 60%'}};
 const MENU=[
  {cat:'Pizza',items:[{n:'Pesto pizza',d:'Chicken, cherry tomato, basil, charred crust',p:'pizza'},{n:'Cheese and basil pizza',d:'Melted cheese, fresh basil, blistered edge',p:'spread'}]},
- {cat:'Plates',items:[{n:'Crumbed chicken, pesto fusilli',d:'On tomato sauce, finished with mint',p:'chicken'},{n:'Grilled salmon',d:'With salad and herbs',p:'salmon'},{n:'Fish and chips',d:'Fries and a creamy dip',p:'spread'},{n:'Grilled chicken, rice and vegetables',d:'Potato straws, two sauces',p:'grilled'},{n:'Chicken in cream sauce',d:'With rice and vegetables',p:'table'}]},
+ {cat:'Plates',items:[{n:'Crumbed chicken, pesto fusilli',d:'On tomato sauce, finished with mint',p:'chicken'},{n:'Grilled salmon',d:'With salad and herbs',p:'salmon'},{n:'Fish and chips',d:'Fries and a creamy dip',p:'spread'},{n:'Grilled chicken, vegetables',d:'Rice, potato straws, two sauces',p:'grilled'},{n:'Chicken in cream sauce',d:'With rice and vegetables',p:'table'}]},
  {cat:'Small plates',items:[{n:'Crisp golden prawns',d:'Lettuce and dill',p:'prawns'},{n:'Crispy rolls',d:'With a dipping sauce',p:'spread'}]},
  {cat:'Patisserie',items:[{n:'Baked cheesecake',d:'With red berry coulis',p:'cake'},{n:'Bread rolls',d:'Warm, for the table',p:'bread'}]},
- {cat:'Drinks',items:[{n:'Blue coconut shake',d:'Coconut rim, cherry',p:'drinks'},{n:'Iced tea, lemon and mint',d:'Amber and bright',p:'drinks'},{n:'Hot coffee',d:'A heart in the foam',p:'latte'},{n:'Iced coffee',d:'In a KOKOY cup',p:'iced'}]}
+ {cat:'Drinks',items:[{n:'Blue coconut shake',d:'Coconut rim, cherry',p:'drinks'},{n:'Iced tea, lemon and mint',d:'Amber and bright',p:'drinks'}]}
 ];
 const cats=$('#cats'),items=$('#items'),alc=$('#alc'),cap=$('#alcCap');
 let curImg=alc.querySelector('img'),curKey='pizza';
 const anim=()=>window.gsap&&!reduce;
 function showImg(it){
   cap.textContent=it.n; if(it.p===curKey)return; curKey=it.p; const p=P[it.p];
-  const im=new Image(); im.alt=''; im.decoding='async'; im.className='out'; if(p.pos)im.style.objectPosition=p.pos; im.src='img/'+p.src+'.webp';
+  const im=new Image(); im.alt=''; im.decoding='async'; im.className='out'+(p.print?' print':''); if(p.pos)im.style.objectPosition=p.pos; im.src='img/'+p.src+'.webp';
   alc.appendChild(im); const old=curImg; curImg=im;
   const go=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{im.classList.remove('out');old.classList.add('out');setTimeout(()=>old.remove(),1100)}));
   im.decode?im.decode().then(go,go):go();
@@ -860,26 +785,19 @@ form.addEventListener('submit',e=>{
   form.hidden=true;$('#done').hidden=false;$('#doneTitle').focus();
 });
 $('#again').onclick=()=>{form.reset();setG(2);dIn.value=tmr;$('#done').hidden=true;form.hidden=false;$('#r-name').focus()};
-$('#copyAddr').addEventListener('click',function(){const b=this,txt='1A/C Bosan Road, A Block, Gulgasht Colony, Multan';const ok=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1800)};try{navigator.clipboard.writeText(txt).then(ok,()=>{})}catch(e){}});
+$('#copyAddr').addEventListener('click',function(){const b=this,txt=$('#addr').textContent;const ok=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1800)};const sel=()=>{const r=document.createRange();r.selectNodeContents($('#addr'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};try{navigator.clipboard.writeText(txt).then(ok,sel)}catch(e){sel()}});
 
 /* ───────── MOTION ───────── */
 if(!window.gsap||!window.ScrollTrigger||reduce)return;
 gsap.registerPlugin(ScrollTrigger);
 document.documentElement.classList.add('js-motion');
 
-/* smooth, weighted scroll on mouse/trackpad only */
-if(window.Lenis&&matchMedia('(pointer:fine)').matches){
-  lenis=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
-  lenis.on('scroll',ScrollTrigger.update);
-  gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
-  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href');const el=id==='#top'?0:$(id);if(el===null)return;e.preventDefault();lenis.scrollTo(el,{duration:1.6})});
-}
-
-/* arrival: the door opens from the ground up */
+const arch=$('#heroArch'),archIn=$('.hero-arch-in');
 gsap.timeline({defaults:{ease:'expo.out'}})
-  .fromTo('.hero-arch-in',{clipPath:'inset(100% 0% 0% 0%)',scale:1.22},{clipPath:'inset(0% 0% 0% 0%)',scale:1,duration:2.6})
-  .from('.hero-word .l>span',{yPercent:110,duration:1.7,stagger:.08},.55)
-  .from(['.hero-copy>*','.hero-aside>*'],{opacity:0,y:24,duration:1.5,stagger:.08},1.1);
+  .fromTo(archIn,{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:2.2})
+  .from('.hero-arch img',{scale:1.28,duration:2.8},0)
+  .from('.hero-word .l>span',{yPercent:110,duration:1.6,stagger:.08},.5)
+  .from(['.hero-copy>*','.hero-aside>*'],{opacity:0,y:22,duration:1.4,stagger:.08},1.05);
 
 const st=$('#expState');
 st.innerHTML=st.innerHTML.replace(/(<em>.*?<\/em>)|([^\s<]+)/g,(m,em,w)=>em?'<span class="w">'+em+'</span>':'<span class="w">'+w+'</span>');
@@ -887,102 +805,80 @@ st.innerHTML=st.innerHTML.replace(/(<em>.*?<\/em>)|([^\s<]+)/g,(m,em,w)=>em?'<sp
 const mm=gsap.matchMedia();
 mm.add({desk:'(min-width: 960px)',mob:'(max-width: 959px)'},ctx=>{
   const {desk}=ctx.conditions;
-  const hero=$('.hero'),arch=$('#heroArch');
 
-  /* 01 → 02: walk through the arch into lit plaster. The photo dissolves before it is ever enlarged past its own resolution. */
-  const box=()=>{const w=innerWidth,h=hero.offsetHeight;if(w<760){const aw=w*.78;return{left:w*.11,top:92,width:aw,height:innerHeight*.52,r:aw/2}}const at=Math.min(Math.max(108,innerHeight*.14),150),aw=Math.min((h-at)*.74,w*.44);return{left:(w-aw)/2,top:at,width:aw,height:h-at,r:aw/2}};
-  gsap.timeline({scrollTrigger:{trigger:hero,start:'top top',end:()=>'+='+innerHeight*(desk?1.6:1.2),scrub:1,pin:true,anticipatePin:1,invalidateOnRefresh:true}})
+  /* 01 → 02: through the arch */
+  const box=()=>{const w=innerWidth,h=innerHeight;if(w<760){const aw=w*.78;return{left:w*.11,top:92,width:aw,height:h*.50,r:aw/2}}const aw=Math.min(w*.46,640),top=Math.min(Math.max(100,h*.13),132);return{left:(w-aw)/2,top,width:aw,height:h-top,r:aw/2}};
+  gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:()=>'+='+innerHeight*(desk?1.5:1.1),scrub:1,pin:true,anticipatePin:1,invalidateOnRefresh:true}})
     .fromTo(arch,{left:()=>box().left,top:()=>box().top,width:()=>box().width,height:()=>box().height,borderTopLeftRadius:()=>box().r,borderTopRightRadius:()=>box().r},
-                 {left:0,top:0,width:()=>innerWidth,height:()=>hero.offsetHeight,borderTopLeftRadius:0,borderTopRightRadius:0,ease:'power2.inOut',duration:1},0)
-    .fromTo('.hero-arch img',{scale:1},{scale:1.16,duration:.62,ease:'power1.in',immediateRender:false},.12)
-    .fromTo('.hero-arch-in',{opacity:1},{opacity:0,duration:.6,ease:'power1.in',immediateRender:false},.12)
-    .to('.hero-word .l',{x:i=>(i-2)*innerWidth*.09,yPercent:-30,opacity:0,duration:.5,ease:'power1.in'},0)
-    .fromTo(['.hero-copy','.hero-aside'],{opacity:1,y:0},{opacity:0,y:-40,duration:.32,immediateRender:false},0)
-    .fromTo('.hero-enter',{opacity:0},{opacity:1,duration:.25},.74)
-    .fromTo('.hero-enter>*',{y:60},{y:0,stagger:.06,duration:.35,ease:'power3.out'},.72)
-    .to({},{duration:.18});
+                 {left:0,top:0,width:()=>innerWidth,height:()=>innerHeight,borderTopLeftRadius:0,borderTopRightRadius:0,ease:'power2.inOut',duration:1},0)
+    .fromTo(archIn,{scale:1.07},{scale:1,duration:1,ease:'none',immediateRender:false},0)
+    .to('.hero-word .l',{x:i=>(i-2)*innerWidth*.08,yPercent:-30,opacity:0,duration:.55,ease:'power1.in'},0)
+    .fromTo(['.hero-copy','.hero-aside'],{opacity:1,y:0},{opacity:0,y:-40,duration:.35,immediateRender:false},0)
+    .to('.hero-veil',{opacity:1,duration:.45},.55)
+    .to('.hero-arch-in',{opacity:.55,duration:.45},.55)
+    .fromTo('.hero-enter',{opacity:0},{opacity:1,duration:.3},.7)
+    .fromTo('.hero-enter>*',{y:60},{y:0,stagger:.06,duration:.4,ease:'power3.out'},.68);
 
   if(desk){
-    /* 03 interior: each room slides up over the last, the camera keeps moving */
-    const rooms=$('.rooms');rooms.classList.add('pinned');
-    const rs=$$('.room',rooms),bar=$('#roomBar'),no=$('#roomNo');
-    rs.forEach((r,i)=>{gsap.set(r,{zIndex:i+1});if(i){gsap.set($('.room-ph',r),{clipPath:'inset(100% 0% 0% 0%)'});gsap.set($$('.room-txt>*',r),{opacity:0,y:50})}});
-    const rt=gsap.timeline({scrollTrigger:{trigger:rooms,start:'top top',end:()=>'+='+innerHeight*rs.length*1.05,pin:true,scrub:1.1,invalidateOnRefresh:true,
-      onUpdate:s=>{gsap.set(bar,{scaleX:s.progress});no.textContent=pad(Math.min(rs.length,1+Math.floor(s.progress*rs.length*.999)))}}});
-    rs.forEach((r,i)=>{
-      const L='r'+i;
-      rt.fromTo($('.pi',r),{scale:1.16},{scale:1,duration:1.5,ease:'none'},L);
-      if(!i)return;const p=rs[i-1];
-      rt.to($('.room-ph .pi',p),{yPercent:-14,duration:1,ease:'power2.inOut'},L)
-        .to($$('.room-txt>*',p),{opacity:0,y:-40,duration:.4,stagger:.03},L)
-        .to($('.room-ph',r),{clipPath:'inset(0% 0% 0% 0%)',duration:1,ease:'power3.inOut'},L)
-        .to($$('.room-txt>*',r),{opacity:1,y:0,duration:.55,stagger:.06,ease:'power2.out'},L+'+=.5');
+    /* 03 interior: one room gives way to the next */
+    const story=$('.story');story.classList.add('pinned');
+    const fr=$$('.frame',story),rail=$$('.story-rail span');
+    fr.forEach((f,i)=>{gsap.set(f,{zIndex:i+1});if(i){gsap.set($('.f-main',f),{clipPath:'inset(100% 0% 0% 0%)'});gsap.set($('.f-cap',f),{opacity:0,y:40});const s=$('.f-sub',f);s&&gsap.set(s,{yPercent:50,opacity:0})}});
+    const stl=gsap.timeline({scrollTrigger:{trigger:story,start:'top top',end:()=>'+='+innerHeight*fr.length*.95,pin:true,scrub:1.1,invalidateOnRefresh:true,
+      onUpdate:s=>{const k=Math.min(fr.length-1,Math.floor(s.progress*fr.length*.999));rail.forEach((r,j)=>r.classList.toggle('on',j===k))}}});
+    fr.forEach((f,i)=>{
+      stl.fromTo($('.f-main img',f),{scale:1.14},{scale:1,duration:1.4,ease:'none'},'h'+i);
+      if(!i)return;const p=fr[i-1],ps=$('.f-sub',p),fs=$('.f-sub',f);
+      stl.to($('.f-cap',p),{opacity:0,y:-40,duration:.4},'h'+i)
+         .to($('.f-main',p),{scale:.9,opacity:.3,duration:1,ease:'none'},'h'+i);
+      ps&&stl.to(ps,{yPercent:-40,opacity:0,duration:.5},'h'+i);
+      stl.to($('.f-main',f),{clipPath:'inset(0% 0% 0% 0%)',duration:1,ease:'power3.inOut'},'h'+i)
+         .to($('.f-cap',f),{opacity:1,y:0,duration:.5,ease:'power2.out'},'h'+i+'+=.55');
+      fs&&stl.to(fs,{yPercent:0,opacity:1,duration:.6,ease:'power2.out'},'h'+i+'+=.6');
     });
-    rt.to({},{duration:.3});
+    stl.to({},{duration:.25});
 
-    /* 04 signature dishes: the plates change inside one arch window */
+    /* 04 food: each plate rises over the last */
     const ds=$('.dishes');ds.classList.add('pinned');
     const dish=$$('.dish',ds),drail=$$('.dish-rail span');
-    dish.forEach((d,i)=>{gsap.set(d,{zIndex:i+1});if(i){gsap.set($('.dish-ph',d),{clipPath:'inset(100% 0% 0% 0%)'});gsap.set($$('.mask>*',d),{yPercent:115});gsap.set($$('.on-plate,.price',d),{opacity:0})}});
-    const dt=gsap.timeline({scrollTrigger:{trigger:ds,start:'top top',end:()=>'+='+innerHeight*dish.length*1.1,pin:true,scrub:1.1,invalidateOnRefresh:true,
+    dish.forEach((d,i)=>{gsap.set(d,{zIndex:i+1,background:'var(--umber)'});if(i){gsap.set(d,{clipPath:'inset(100% 0% 0% 0%)'});gsap.set($$('.mask>*',d),{yPercent:110});gsap.set($$('.on-plate,.price',d),{opacity:0})}});
+    const dtl=gsap.timeline({scrollTrigger:{trigger:ds,start:'top top',end:()=>'+='+innerHeight*dish.length*1.05,pin:true,scrub:1.1,invalidateOnRefresh:true,
       onUpdate:s=>{const k=Math.min(dish.length-1,Math.floor(s.progress*dish.length*.999));drail.forEach((r,j)=>r.classList.toggle('on',j===k))}}});
     dish.forEach((d,i)=>{
       const L='d'+i;
-      dt.fromTo($('.pi',d),{scale:1.14},{scale:1,duration:1.6,ease:'none'},L);
+      dtl.fromTo($('.dish-ph img',d),{scale:1.12},{scale:1,duration:1.6,ease:'none'},L);
       if(!i)return;const p=dish[i-1];
-      dt.to($$('.mask>*',p),{yPercent:-115,duration:.5,stagger:.04,ease:'power2.in'},L)
-        .to($$('.on-plate,.price',p),{opacity:0,duration:.3},L)
-        .to($('.pi',p),{yPercent:-10,duration:.9,ease:'power2.inOut'},L)
-        .to($('.dish-ph',d),{clipPath:'inset(0% 0% 0% 0%)',duration:.9,ease:'power3.inOut'},L)
-        .to($$('.mask>*',d),{yPercent:0,duration:.7,stagger:.07,ease:'power3.out'},L+'+=.5')
-        .to($$('.on-plate,.price',d),{opacity:1,duration:.5,stagger:.08},L+'+=.8');
+      dtl.to(d,{clipPath:'inset(0% 0% 0% 0%)',duration:.85,ease:'power3.inOut'},L)
+         .to($('.dish-in',p),{yPercent:-8,scale:.96,opacity:.2,duration:.85,ease:'power1.in'},L)
+         .to($$('.mask>*',d),{yPercent:0,duration:.7,stagger:.08,ease:'power3.out'},L+'+=.45')
+         .to($$('.on-plate,.price',d),{opacity:1,duration:.5,stagger:.08},L+'+=.75');
     });
-    dt.to({},{duration:.35});
+    dtl.to({},{duration:.3});
 
-    /* 06 after dark: walk sideways along the night */
+    /* 06 gallery: the evening moves sideways */
     const gal=$('.gallery'),track=$('#track');gal.classList.add('pinned');
     const dist=()=>Math.max(0,track.scrollWidth-innerWidth);
-    const gt=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:gal,start:'top top',end:()=>'+='+dist()*1.1,pin:true,scrub:1,invalidateOnRefresh:true}});
-    $$('.shot .pi',track).forEach(el=>gsap.fromTo(el,{xPercent:-4,scale:1.08},{xPercent:4,scale:1.08,ease:'none',scrollTrigger:{trigger:el.parentElement,containerAnimation:gt,start:'left right',end:'right left',scrub:true}}));
-    $$('.shot',track).forEach(el=>gsap.fromTo($('.ph',el),{clipPath:'inset(0% 0% 0% 100%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:el,containerAnimation:gt,start:'left 96%',end:'left 55%',scrub:true}}));
-
-    /* stay a while: the sign opens up, the words step aside */
-    const stay=$('.stay');stay.classList.add('tall');
-    const win=$('.stay-win'),half=()=>win.offsetWidth/2;
-    gsap.timeline({scrollTrigger:{trigger:stay,start:'top top',end:'bottom bottom',scrub:1,invalidateOnRefresh:true}})
-      .fromTo(win,{scale:.46},{scale:1,ease:'power2.inOut',duration:1},0)
-      .fromTo('.stay-win img',{scale:1.3},{scale:1,ease:'none',duration:1},0)
-      .fromTo('.sw-l',{x:()=>half()*.3,opacity:0},{x:()=>-(half()+innerWidth*.025),opacity:1,ease:'power2.inOut',duration:.9},.1)
-      .fromTo('.sw-r',{x:()=>-half()*.3,opacity:0},{x:()=>half()+innerWidth*.025,opacity:1,ease:'power2.inOut',duration:.9},.1)
-      .fromTo('.stay-cta>*',{opacity:0,y:30},{opacity:1,y:0,stagger:.08,duration:.3},.85);
+    const gt=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:gal,start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true}});
+    $$('.shot img',track).forEach(img=>gsap.fromTo(img,{xPercent:-3.5},{xPercent:3.5,ease:'none',scrollTrigger:{trigger:img.parentElement,containerAnimation:gt,start:'left right',end:'right left',scrub:true}}));
   }else{
-    $$('.room-ph,.dish-ph,.exp-main,.pl-big,.drink-ph,.sugar-ph,.stay-win').forEach(el=>gsap.fromTo(el,{clipPath:'inset(22% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.6,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
-    $$('.dish-l,.dish-r,.room-txt').forEach(el=>gsap.from(el,{y:30,opacity:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}}));
+    $$('.f-main,.dish-ph,.exp-main,.pat-arch,.drink-ph').forEach(el=>gsap.fromTo(el,{clipPath:'inset(24% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.6,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
+    $$('.dish-text,.f-cap').forEach(el=>gsap.from(el,{y:30,opacity:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}}));
   }
 
-  /* reveals and drift, created after the pins so their positions include pin spacing */
-  gsap.fromTo('#expState .w',{opacity:.14},{opacity:1,stagger:.05,ease:'none',scrollTrigger:{trigger:'#expState',start:'top 82%',end:'bottom 42%',scrub:true}});
-  $$('[data-par]').forEach(el=>{const img=$('img',el);gsap.set(img,{height:'118%',top:'-9%',position:'absolute',left:0});gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}})});
-  if(desk){
-    gsap.fromTo('.exp-sub',{y:120},{y:-60,ease:'none',scrollTrigger:{trigger:'.exp-comp',start:'top bottom',end:'bottom top',scrub:true}});
-    gsap.fromTo('.cf-cup',{y:140},{y:-60,ease:'none',scrollTrigger:{trigger:'.coffee',start:'top bottom',end:'bottom top',scrub:true}});
-    gsap.fromTo('.cf-big .ph',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.cf-big',start:'top 85%',end:'top 35%',scrub:1}});
-    gsap.fromTo('.pl-small',{y:110},{y:-40,ease:'none',scrollTrigger:{trigger:'.plates',start:'top bottom',end:'bottom top',scrub:true}});
-    gsap.fromTo('.exp-main',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.exp-main',start:'top 85%',end:'top 35%',scrub:1}});
-    gsap.fromTo('.pl-big',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.pl-big',start:'top 85%',end:'top 35%',scrub:1}});
-    gsap.fromTo('.drink-ph',{clipPath:'inset(18% 18% 18% 18% round 0px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'power2.out',scrollTrigger:{trigger:'.drink-ph',start:'top 90%',end:'center 55%',scrub:1}});
-    gsap.fromTo('.drink-ph img',{scale:1.18},{scale:1,ease:'none',scrollTrigger:{trigger:'.drink-ph',start:'top bottom',end:'bottom top',scrub:true}});
-    gsap.fromTo('.dn .ln',{scaleX:0},{scaleX:1,ease:'power2.out',scrollTrigger:{trigger:'.drinks-stage',start:'top 55%',end:'center 50%',scrub:1}});
-    gsap.fromTo('.sugar-ph',{clipPath:'inset(0% 0% 0% 100%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.sugar',start:'top 80%',end:'top 10%',scrub:1}});
-  }
-  $$('.dn>div,.pat-text>*,.pl-txt>*,.cf-txt>*,.loc-row>*').forEach(el=>gsap.from(el,{y:36,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
-  $$('.menu-left .d,.drinks-head .d,.loc-addr,.res-intro .d,.panel,.rooms-head .d').forEach(el=>gsap.from(el,{y:60,opacity:0,duration:1.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
-  gsap.fromTo('#door',{clipPath:'inset(12% 30% 0% 30% round 20vw 20vw 0vw 0vw)'},{clipPath:'inset(0% 0% 0% 0% round 0vw 0vw 0vw 0vw)',ease:'none',scrollTrigger:{trigger:'.door',start:'top 70%',end:'bottom bottom',scrub:true}});
-  gsap.fromTo('#door>*',{y:80,opacity:0},{y:0,opacity:1,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.door',start:'top 40%',end:'bottom bottom',scrub:true}});
-  gsap.fromTo('#patWord',{xPercent:6},{xPercent:-14,ease:'none',scrollTrigger:{trigger:'.sugar',start:'top bottom',end:'bottom top',scrub:true}});
-  gsap.from('.foot-word span',{yPercent:100,opacity:0,stagger:.06,duration:1.6,ease:'expo.out',scrollTrigger:{trigger:'footer',start:'top 80%',once:true}});
+  /* triggers below the pins, created after them so positions include pin spacing */
+  gsap.fromTo('#expState .w',{opacity:.16},{opacity:1,stagger:.05,ease:'none',scrollTrigger:{trigger:'#expState',start:'top 82%',end:'bottom 42%',scrub:true}});
+  $$('[data-par]').forEach(el=>{const img=$('img',el);gsap.set(img,{height:'116%',top:'-8%',position:'absolute',left:0});gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}})});
+  if(desk)gsap.fromTo('.exp-sub',{y:90},{y:-60,ease:'none',scrollTrigger:{trigger:'.exp-comp',start:'top bottom',end:'bottom top',scrub:true}});
+  $$('.menu-left .d,.gal-head .d,.drinks-txt .d,.loc .d,.res-intro .d,.panel').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1.6,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
+  gsap.fromTo('#door',{clipPath:'inset(14% 29% 0% 29% round 21vw 21vw 0vw 0vw)'},{clipPath:'inset(0% 0% 0% 0% round 0vw 0vw 0vw 0vw)',ease:'none',scrollTrigger:{trigger:'.door',start:'top 70%',end:'bottom bottom',scrub:true}});
+  gsap.fromTo('#patWord',{xPercent:4},{xPercent:-16,ease:'none',scrollTrigger:{trigger:'.sugar',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.fromTo('#patClose',{y:70},{y:-50,ease:'none',scrollTrigger:{trigger:'.sugar',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.fromTo('.atmo .ph img',{scale:1.16,yPercent:-4},{scale:1,yPercent:4,ease:'none',scrollTrigger:{trigger:'.atmo',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.from('.atmo-txt>*',{y:50,opacity:0,duration:1.8,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.atmo-txt',start:'top 85%',once:true}});
+  gsap.fromTo('#sign',{clipPath:'inset(20% 20% 20% 20%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'none',scrollTrigger:{trigger:'#sign',start:'top 90%',end:'center 55%',scrub:true}});
+  gsap.fromTo('#sign img',{scale:1.2},{scale:1,ease:'none',scrollTrigger:{trigger:'#sign',start:'top bottom',end:'bottom top',scrub:true}});
 
-  return()=>{$$('.pinned').forEach(el=>el.classList.remove('pinned'));$('.stay').classList.remove('tall')};
+  return()=>{$$('.pinned').forEach(el=>el.classList.remove('pinned'))};
 });
 document.fonts&&document.fonts.ready.then(()=>ScrollTrigger.refresh());
 addEventListener('load',()=>ScrollTrigger.refresh());
