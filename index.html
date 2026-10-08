@@ -155,7 +155,7 @@ button{font:inherit;color:inherit}
 .exp-main{grid-column:1/8;width:min(calc(100% + var(--gut)),640px);aspect-ratio:1;margin-left:calc(var(--gut) * -1)}
 .exp-main img{object-position:50% 60%}
 .exp-sub{grid-column:6/9;grid-row:1;width:min(100%,300px);aspect-ratio:3/4;margin-top:clamp(240px,30vw,470px);position:relative;z-index:2;justify-self:end}
-.exp-sub img{object-position:0% 30%}
+.exp-sub img{object-position:30% 82%}
 .exp-text{grid-column:9/13;grid-row:1;display:grid;gap:3rem;padding-top:clamp(20px,4vw,72px)}
 .exp-lede{font-size:1.1rem;line-height:1.8;margin:0;max-width:38ch}
 .notes{display:grid;gap:2rem;margin:0;padding:0;list-style:none;counter-reset:n}
@@ -337,6 +337,24 @@ button{font:inherit;color:inherit}
   .dn-l{order:2}.dn-r{order:3}
 }
 
+.coffee{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 clamp(16px,2vw,32px);align-items:start;margin-top:clamp(120px,14vw,220px)}
+.cf-big{grid-column:1/9;grid-row:1;margin:0 0 0 calc(var(--gut) * -1);width:min(calc(100% + var(--gut)),980px)}
+.cf-big .ph{aspect-ratio:1360/765}
+.cf-cup{grid-column:9/12;grid-row:1/3;margin:clamp(160px,18vw,300px) 0 0;width:min(100%,360px)}
+.cf-cup .ph{aspect-ratio:574/1020}
+.cf-cup .ph img{object-position:50% 40%}
+.cf-txt{grid-column:2/8;grid-row:2;display:grid;gap:1.4rem;padding-top:clamp(48px,5vw,80px)}
+.cf-txt p{margin:0;color:var(--soft-d);max-width:36ch}
+.coffee figcaption{display:flex;gap:1rem;margin-top:1rem;font-size:.88rem;color:var(--soft-d)}
+.coffee figcaption b{font-weight:400;color:var(--lamp);font-variant-numeric:tabular-nums}
+.cf-big figcaption{padding-left:var(--gut)}
+@media (max-width:959px){
+  .coffee{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .cf-big{grid-column:1/-1;width:calc(100% + var(--gut))}
+  .cf-cup{grid-column:3/-1;grid-row:2;margin-top:-18%;justify-self:end;width:100%;max-width:260px;position:relative;z-index:2}
+  .cf-txt{grid-column:1/-1;grid-row:3}
+}
+
 /* ───── 06 AFTER DARK: horizontal night walk ───── */
 .gallery{position:relative;z-index:2;background:var(--night);overflow:hidden;padding-block:clamp(80px,9vw,140px)}
 .track{display:flex;gap:clamp(28px,4vw,80px);align-items:center;padding-inline:var(--gut);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
@@ -349,8 +367,8 @@ button{font:inherit;color:inherit}
 .shot .pi{position:absolute;inset:0}
 .shot figcaption{display:flex;gap:1rem;font-size:.88rem;color:var(--soft-d)}
 .shot figcaption b{font-weight:400;color:var(--lamp);font-variant-numeric:tabular-nums}
-.shot.up{align-self:flex-start}.shot.dn{align-self:flex-end}
-@media (max-width:959px){.shot .ph{height:min(var(--mh),60svh)}.shot.up,.shot.dn{align-self:center}}
+.shot.s-up{align-self:flex-start}.shot.s-dn{align-self:flex-end}
+@media (max-width:959px){.shot .ph{height:min(var(--mh),60svh)}.shot.s-up,.shot.s-dn{align-self:center}}
 .js-motion .gallery.pinned{height:100vh;display:flex;align-items:center;padding-block:66px 0}
 .js-motion .gallery.pinned .track{overflow:visible;scroll-snap-type:none;width:max-content;height:calc(100vh - 140px)}
 
@@ -375,7 +393,7 @@ button{font:inherit;color:inherit}
 .res-intro{position:sticky;top:120px;display:grid;gap:2rem}
 .res-intro p{margin:0;color:var(--soft-d);max-width:36ch}
 .res-arch{width:min(66%,280px);aspect-ratio:3/4;margin-top:1rem}
-.res-arch img{object-position:4% 22%}
+.res-arch img{object-position:40% 78%}
 form{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2.4rem 1.8rem}
 .f{display:grid;gap:.55rem;grid-column:span 6;min-width:0}
 .f.s2{grid-column:span 2}.f.s3{grid-column:span 3}
@@ -490,7 +508,7 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
     <p class="d exp-state" id="expState">Arched rooms in warm plaster, sculpture on the walls and low light over every table. A menu that runs from the main course <em>to patisserie.</em></p>
     <div class="exp-comp">
       <div class="exp-main ph" data-par><img src="img/lounge.webp" alt="The KOKOY lounge: cream armchairs under framed relief art, each lit by its own spotlight" loading="lazy" decoding="async" width="729" height="732"></div>
-      <div class="exp-sub ph"><img src="img/sculpture-table.webp" alt="A gold sculpture beside a table set with dried pampas" loading="lazy" decoding="async" width="729" height="732"></div>
+      <div class="exp-sub ph"><img src="img/sculpture.webp" alt="A gold-leaf ribbon sculpture in the KOKOY dining room, the glass garden glowing behind" loading="lazy" decoding="async" width="574" height="1020"></div>
       <div class="exp-text">
         <p class="exp-lede">KOKOY is a restaurant and patisserie in Gulgasht Colony, Multan. Come for dinner, stay for dessert, or settle into the lounge with something cold to drink.</p>
         <ol class="notes">
@@ -508,9 +526,18 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
   <div class="wrap rooms-head"><span class="label">Interior</span><h2 class="d l1">A walk <em>through the rooms</em></h2></div>
   <div class="rooms-list">
     <article class="room">
-      <figure class="room-ph" style="--ar-m:4/5"><div class="pi"><img src="img/wall-art.webp" alt="A sculpted relief artwork on a plaster wall under a single spotlight, the dining room and garden beyond" loading="lazy" decoding="async" width="729" height="915" style="object-position:62% 50%"></div></figure>
+      <figure class="room-ph" style="--ar-m:3/4"><div class="pi"><img src="img/hall.webp" alt="The double-height KOKOY dining hall: cream armchairs, a glass garden of palms and a ring of light hanging from the dark ceiling" loading="lazy" decoding="async" width="768" height="1020" style="object-position:50% 50%"></div></figure>
       <div class="room-txt">
         <span class="room-n" aria-hidden="true">01</span>
+        <span class="label">The dining hall</span>
+        <h3 class="d l2">A garden <em>behind glass</em></h3>
+        <p>A double-height room in warm plaster, cream armchairs at dark tables, palms growing inside a glass court and a ring of light overhead.</p>
+      </div>
+    </article>
+    <article class="room">
+      <figure class="room-ph" style="--ar-m:4/5"><div class="pi"><img src="img/wall-art.webp" alt="A sculpted relief artwork on a plaster wall under a single spotlight, the dining room and garden beyond" loading="lazy" decoding="async" width="729" height="915" style="object-position:62% 50%"></div></figure>
+      <div class="room-txt">
+        <span class="room-n" aria-hidden="true">02</span>
         <span class="label">Gallery walls</span>
         <h3 class="d l2">Art <em>under its own light</em></h3>
         <p>Relief artworks in plaster tones line the dining room, each under a single spotlight, with the garden glowing through the glass.</p>
@@ -519,7 +546,7 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
     <article class="room">
       <figure class="room-ph" style="--ar-m:4/5"><div class="pi"><img src="img/gold-wall.webp" alt="A wall artwork of gold-leaf blocks above a live-edge wooden shelf" loading="lazy" decoding="async" width="729" height="1218" style="object-position:50% 40%"></div></figure>
       <div class="room-txt">
-        <span class="room-n" aria-hidden="true">02</span>
+        <span class="room-n" aria-hidden="true">03</span>
         <span class="label">Gold leaf</span>
         <h3 class="d l2">A wall <em>of gilded blocks</em></h3>
         <p>Gold leaf on white plaster, above a live-edge shelf in dark wood.</p>
@@ -528,14 +555,14 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
     <article class="room">
       <figure class="room-ph win"><div class="awin"><div class="pi"><img src="img/overhead.webp" alt="The KOKOY salon seen from the level above: cream lounge chairs, dark tables and bronze pendant lights" loading="lazy" decoding="async" width="459" height="1020"></div></div></figure>
       <div class="room-txt">
-        <span class="room-n" aria-hidden="true">03</span>
+        <span class="room-n" aria-hidden="true">04</span>
         <span class="label">The salon</span>
         <h3 class="d l2">Seen from <em>the gallery level</em></h3>
         <p>Cream lounge chairs around dark tables, with a cascade of bronze light hanging overhead.</p>
       </div>
     </article>
   </div>
-  <div class="rooms-rail" aria-hidden="true"><span id="roomNo">01</span><i><b id="roomBar"></b></i><span>03</span></div>
+  <div class="rooms-rail" aria-hidden="true"><span id="roomNo">01</span><i><b id="roomBar"></b></i><span>04</span></div>
 </section>
 
 <div class="door" data-chapter="04|The food">
@@ -566,27 +593,39 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
         <span class="mask"><span class="num">02 — Plates</span></span>
         <span class="mask"><h3 class="d long">Crumbed Chicken,<br><em>Pesto Pasta</em></h3></span>
       </div>
-      <figure class="dish-ph"><div class="pi"><img src="img/chicken-pasta.webp" alt="A crumbed chicken fillet on tomato sauce topped with pesto fusilli and mint" loading="lazy" decoding="async" width="729" height="1218" style="--z:1.42;--o:34% 80%"></div></figure>
+      <figure class="dish-ph"><div class="pi"><img src="img/chicken-pesto.webp" alt="A crumbed chicken fillet on tomato sauce, topped with pesto fusilli, a spoon of cream and thyme" loading="lazy" decoding="async" width="768" height="1020" style="object-position:50% 55%"></div></figure>
       <div class="dish-r">
-        <span class="mask"><p>A golden crumbed fillet on a pool of tomato sauce, crowned with pesto fusilli and a sprig of mint.</p></span>
-        <dl class="on-plate"><dt>On the plate</dt><dd>Crumbed chicken · Tomato sauce · Pesto fusilli · Mint</dd></dl>
+        <span class="mask"><p>A golden crumbed fillet on a pool of tomato sauce, crowned with pesto fusilli, a spoon of cream and a sprig of thyme.</p></span>
+        <dl class="on-plate"><dt>On the plate</dt><dd>Crumbed chicken · Tomato sauce · Pesto fusilli · Cream</dd></dl>
         <div class="price">Rs —<small>Price from KOKOY menu</small></div>
       </div>
     </article>
     <article class="dish">
       <div class="dish-l">
-        <span class="mask"><span class="num">03 — To share</span></span>
+        <span class="mask"><span class="num">03 — Grill</span></span>
+        <span class="mask"><h3 class="d">Grilled<br><em>Chicken</em></h3></span>
+      </div>
+      <figure class="dish-ph"><div class="pi"><img src="img/grilled-chicken.webp" alt="Grilled chicken breasts with a cherry tomato, rice under crisp potato straws, glazed vegetables and two sauces, seen from above" loading="lazy" decoding="async" width="1017" height="1020" style="object-position:62% 50%"></div></figure>
+      <div class="dish-r">
+        <span class="mask"><p>Char-lined chicken breast beside rice under crisp potato straws, glazed carrots and beans, with two sauces on the side.</p></span>
+        <dl class="on-plate"><dt>On the plate</dt><dd>Grilled chicken · Rice · Vegetables · Two sauces</dd></dl>
+        <div class="price">Rs —<small>Price from KOKOY menu</small></div>
+      </div>
+    </article>
+    <article class="dish">
+      <div class="dish-l">
+        <span class="mask"><span class="num">04 — To share</span></span>
         <span class="mask"><h3 class="d">The<br><em>Table</em></h3></span>
       </div>
-      <figure class="dish-ph"><div class="pi"><img src="img/salmon-table.webp" alt="A shared table: pizza, grilled salmon with salad and sparkling water under dried pampas, in the KOKOY dining room" loading="lazy" decoding="async" width="729" height="915" style="object-position:46% 50%"></div></figure>
+      <figure class="dish-ph"><div class="pi"><img src="img/table-top.webp" alt="A KOKOY table from above: a white pizza with chicken and basil, crumbed chicken under pesto fusilli, and chicken with rice and a cream sauce" loading="lazy" decoding="async" width="574" height="1020" style="object-position:50% 50%"></div></figure>
       <div class="dish-r">
-        <span class="mask"><p>Pizza, grilled salmon and chilled water under dried pampas. Order a few plates and pass them around.</p></span>
-        <dl class="on-plate"><dt>On the table</dt><dd>Pizza · Grilled salmon · Salad</dd></dl>
+        <span class="mask"><p>A white pizza, crumbed chicken under pesto fusilli, and chicken with rice in a cream sauce. Order a few plates and pass them around.</p></span>
+        <dl class="on-plate"><dt>On the table</dt><dd>White pizza · Pesto fusilli · Chicken and rice</dd></dl>
         <div class="price">Rs —<small>Prices from KOKOY menu</small></div>
       </div>
     </article>
   </div>
-  <div class="dish-rail" aria-hidden="true"><span class="on">01</span><span>02</span><span>03</span></div>
+  <div class="dish-rail" aria-hidden="true"><span class="on">01</span><span>02</span><span>03</span><span>04</span></div>
 </section>
 
 <section class="plates" aria-label="Plates to share">
@@ -640,6 +679,11 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
       <div class="drink-ph ph"><img src="img/drinks.webp" alt="A blue coconut shake and an iced tea with lemon and mint, side by side" loading="lazy" decoding="async" width="729" height="1218"></div>
       <div class="dn dn-r"><i class="ln"></i><div><span class="num">02</span><b>Iced tea, <em>lemon and mint</em></b><small>Amber, cold and bright with citrus.</small></div></div>
     </div>
+    <div class="coffee">
+      <figure class="cf-big"><div class="ph" data-par><img src="img/latte.webp" alt="A coffee with a heart poured in the foam, in a speckled cup on a dark table" loading="lazy" decoding="async" width="1360" height="765"></div><figcaption><b>03</b>A heart in the foam</figcaption></figure>
+      <div class="cf-txt"><span class="label">Coffee</span><h3 class="d l2">Hot, or <em>to go</em></h3><p>Coffee at the table with a heart in the foam, or iced in a KOKOY cup to carry out.</p></div>
+      <figure class="cf-cup"><div class="ph"><img src="img/iced-coffee.webp" alt="Two iced coffees in KOKOY-branded cups beside a KOKOY menu tied with ribbon" loading="lazy" decoding="async" width="574" height="1020"></div><figcaption><b>04</b>Iced, in a KOKOY cup</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -651,9 +695,9 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
       <h2 class="d xl">After <em>dark</em></h2>
       <p>The arches light up along Bosan Road and the garden path glows under the palms.</p>
     </div>
-    <figure class="shot up"><div class="ph" style="--mh:760px;--ar:1"><div class="pi"><img src="img/exterior.webp" alt="KOKOY's lit arched facade at night on Bosan Road" loading="lazy" decoding="async" width="729" height="732"></div></div><figcaption><b>01</b>Bosan Road, after dark</figcaption></figure>
-    <figure class="shot dn"><div class="ph" style="--mh:740px;--ar:3/4"><div class="pi"><img src="img/entrance.webp" alt="The garden path at the KOKOY entrance: a palm, a wicker chair and the lit sign" loading="lazy" decoding="async" width="765" height="1020" style="--z:1.32;--o:72% 78%"></div></div><figcaption><b>02</b>The garden path</figcaption></figure>
-    <figure class="shot up"><div class="ph" style="--mh:640px;--ar:729/609"><div class="pi"><img src="img/facade.webp" alt="The KOKOY building with tall arches and the KOKOY name" loading="lazy" decoding="async" width="729" height="609"></div></div><figcaption><b>03</b>The arches</figcaption></figure>
+    <figure class="shot s-up"><div class="ph" style="--mh:760px;--ar:1"><div class="pi"><img src="img/exterior.webp" alt="KOKOY's lit arched facade at night on Bosan Road" loading="lazy" decoding="async" width="729" height="732"></div></div><figcaption><b>01</b>Bosan Road, after dark</figcaption></figure>
+    <figure class="shot s-dn"><div class="ph" style="--mh:740px;--ar:3/4"><div class="pi"><img src="img/entrance.webp" alt="The garden path at the KOKOY entrance: a palm, a wicker chair and the lit sign" loading="lazy" decoding="async" width="765" height="1020" style="--z:1.32;--o:72% 78%"></div></div><figcaption><b>02</b>The garden path</figcaption></figure>
+    <figure class="shot s-up"><div class="ph" style="--mh:640px;--ar:729/609"><div class="pi"><img src="img/facade.webp" alt="The KOKOY building with tall arches and the KOKOY name" loading="lazy" decoding="async" width="729" height="609"></div></div><figcaption><b>03</b>The arches</figcaption></figure>
   </div>
 </section>
 
@@ -676,7 +720,7 @@ footer{position:relative;z-index:41;background:var(--night);padding-block:clamp(
       <span class="label">Reservations</span>
       <h2 class="d l1">Reserve <em>a table</em></h2>
       <p>Choose a date, a time and your party size. Add anything we should know in the note.</p>
-      <div class="res-arch ph arch"><img src="img/sculpture-table.webp" alt="" loading="lazy" decoding="async" width="729" height="732"></div>
+      <div class="res-arch ph arch"><img src="img/sculpture.webp" alt="" loading="lazy" decoding="async" width="574" height="1020"></div>
     </div>
     <div>
       <form id="resForm" novalidate>
@@ -761,13 +805,13 @@ new IntersectionObserver(es=>{es.forEach(e=>{resVisible=e.isIntersecting});onScr
 new IntersectionObserver(es=>{es.forEach(e=>{stayVisible=e.isIntersecting});onScroll()}).observe($('.stay-cta'));
 
 /* menu — names describe KOKOY's photos */
-const P={pizza:{src:'pizza-pesto',pos:'50% 56%'},chicken:{src:'chicken-pasta',pos:'34% 80%'},salmon:{src:'salmon-table',pos:'46% 50%'},spread:{src:'spread',pos:'72% 60%'},prawns:{src:'prawns',pos:'38% 55%'},cake:{src:'cheesecake',pos:'50% 72%'},drinks:{src:'drinks',pos:'50% 50%'},bread:{src:'sculpture-table',pos:'80% 90%'}};
+const P={pizza:{src:'pizza-pesto',pos:'50% 56%'},chicken:{src:'chicken-pesto',pos:'50% 55%'},grilled:{src:'grilled-chicken',pos:'62% 50%'},table:{src:'table-top',pos:'50% 50%'},latte:{src:'latte',pos:'45% 50%'},iced:{src:'iced-coffee',pos:'50% 40%'},salmon:{src:'salmon-table',pos:'46% 50%'},spread:{src:'spread',pos:'72% 60%'},prawns:{src:'prawns',pos:'38% 55%'},cake:{src:'cheesecake',pos:'50% 72%'},drinks:{src:'drinks',pos:'50% 50%'},bread:{src:'sculpture-table',pos:'80% 90%'}};
 const MENU=[
  {cat:'Pizza',items:[{n:'Pesto pizza',d:'Chicken, cherry tomato, basil, charred crust',p:'pizza'},{n:'Cheese and basil pizza',d:'Melted cheese, fresh basil, blistered edge',p:'spread'}]},
- {cat:'Plates',items:[{n:'Crumbed chicken, pesto fusilli',d:'On tomato sauce, finished with mint',p:'chicken'},{n:'Grilled salmon',d:'With salad and herbs',p:'salmon'},{n:'Fish and chips',d:'Fries and a creamy dip',p:'spread'},{n:'Grilled chicken, vegetables',d:'Charred fillet with vegetables',p:'spread'},{n:'Crumbed fillet, spaghetti',d:'Golden crumb over a nest of pasta',p:'chicken'}]},
+ {cat:'Plates',items:[{n:'Crumbed chicken, pesto fusilli',d:'On tomato sauce, finished with mint',p:'chicken'},{n:'Grilled salmon',d:'With salad and herbs',p:'salmon'},{n:'Fish and chips',d:'Fries and a creamy dip',p:'spread'},{n:'Grilled chicken, rice and vegetables',d:'Potato straws, two sauces',p:'grilled'},{n:'Chicken in cream sauce',d:'With rice and vegetables',p:'table'}]},
  {cat:'Small plates',items:[{n:'Crisp golden prawns',d:'Lettuce and dill',p:'prawns'},{n:'Crispy rolls',d:'With a dipping sauce',p:'spread'}]},
  {cat:'Patisserie',items:[{n:'Baked cheesecake',d:'With red berry coulis',p:'cake'},{n:'Bread rolls',d:'Warm, for the table',p:'bread'}]},
- {cat:'Drinks',items:[{n:'Blue coconut shake',d:'Coconut rim, cherry',p:'drinks'},{n:'Iced tea, lemon and mint',d:'Amber and bright',p:'drinks'}]}
+ {cat:'Drinks',items:[{n:'Blue coconut shake',d:'Coconut rim, cherry',p:'drinks'},{n:'Iced tea, lemon and mint',d:'Amber and bright',p:'drinks'},{n:'Hot coffee',d:'A heart in the foam',p:'latte'},{n:'Iced coffee',d:'In a KOKOY cup',p:'iced'}]}
 ];
 const cats=$('#cats'),items=$('#items'),alc=$('#alc'),cap=$('#alcCap');
 let curImg=alc.querySelector('img'),curKey='pizza';
@@ -921,6 +965,8 @@ mm.add({desk:'(min-width: 960px)',mob:'(max-width: 959px)'},ctx=>{
   $$('[data-par]').forEach(el=>{const img=$('img',el);gsap.set(img,{height:'118%',top:'-9%',position:'absolute',left:0});gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}})});
   if(desk){
     gsap.fromTo('.exp-sub',{y:120},{y:-60,ease:'none',scrollTrigger:{trigger:'.exp-comp',start:'top bottom',end:'bottom top',scrub:true}});
+    gsap.fromTo('.cf-cup',{y:140},{y:-60,ease:'none',scrollTrigger:{trigger:'.coffee',start:'top bottom',end:'bottom top',scrub:true}});
+    gsap.fromTo('.cf-big .ph',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.cf-big',start:'top 85%',end:'top 35%',scrub:1}});
     gsap.fromTo('.pl-small',{y:110},{y:-40,ease:'none',scrollTrigger:{trigger:'.plates',start:'top bottom',end:'bottom top',scrub:true}});
     gsap.fromTo('.exp-main',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.exp-main',start:'top 85%',end:'top 35%',scrub:1}});
     gsap.fromTo('.pl-big',{clipPath:'inset(0% 100% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.pl-big',start:'top 85%',end:'top 35%',scrub:1}});
@@ -929,7 +975,7 @@ mm.add({desk:'(min-width: 960px)',mob:'(max-width: 959px)'},ctx=>{
     gsap.fromTo('.dn .ln',{scaleX:0},{scaleX:1,ease:'power2.out',scrollTrigger:{trigger:'.drinks-stage',start:'top 55%',end:'center 50%',scrub:1}});
     gsap.fromTo('.sugar-ph',{clipPath:'inset(0% 0% 0% 100%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:'.sugar',start:'top 80%',end:'top 10%',scrub:1}});
   }
-  $$('.dn>div,.pat-text>*,.pl-txt>*,.loc-row>*').forEach(el=>gsap.from(el,{y:36,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
+  $$('.dn>div,.pat-text>*,.pl-txt>*,.cf-txt>*,.loc-row>*').forEach(el=>gsap.from(el,{y:36,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
   $$('.menu-left .d,.drinks-head .d,.loc-addr,.res-intro .d,.panel,.rooms-head .d').forEach(el=>gsap.from(el,{y:60,opacity:0,duration:1.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}));
   gsap.fromTo('#door',{clipPath:'inset(12% 30% 0% 30% round 20vw 20vw 0vw 0vw)'},{clipPath:'inset(0% 0% 0% 0% round 0vw 0vw 0vw 0vw)',ease:'none',scrollTrigger:{trigger:'.door',start:'top 70%',end:'bottom bottom',scrub:true}});
   gsap.fromTo('#door>*',{y:80,opacity:0},{y:0,opacity:1,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.door',start:'top 40%',end:'bottom bottom',scrub:true}});
